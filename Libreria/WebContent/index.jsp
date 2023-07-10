@@ -86,7 +86,7 @@
             <a class="nav-link" href="contatti.jsp">Contatti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.jsp">Accedi
+            <a class="nav-link" href="login.jsp">Accedo
              <span class="navbar-text">
              <img src="img/Login.png" alt="Accedi">
              </span>
