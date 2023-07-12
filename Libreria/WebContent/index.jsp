@@ -9,7 +9,7 @@
   <style>
     .carousel-item img {
       width: 100%;
-      height: 70vh;
+      height: 100vh;
     }
     .logo-container {
       text-align: center;
@@ -56,6 +56,22 @@
     }
     .footer-container p {
      font-size: 30px;
+    }
+    .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:  100px;
+    margin-bottom: 50px;
+	}
+	.product-text {
+  	font-size: 50px;
+  	margin-bottom: 50px;
+  	color: black; /* Aggiungi il colore desiderato per il testo */
+}
+	}
+	.image-above {
+ 	 margin-bottom: 50px;
 }
   </style>
   <title>AS-New Reading</title>
@@ -64,7 +80,7 @@
 
   <div class="logo-container">
     <a href="index.jsp">
-      <img src="img/as.png" alt="Logo" style="width: 220px; height: 220px;">
+      <img src="img/as.png" alt="Logo" style="width: 150px; height: 150px;">
     </a>
    
   </div>
@@ -86,7 +102,7 @@
             <a class="nav-link" href="contatti.jsp">Contatti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.jsp">Accedo
+            <a class="nav-link" href="login.jsp">Accedi
              <span class="navbar-text">
              <img src="img/Login.png" alt="Accedi">
              </span>
@@ -105,35 +121,13 @@
     </div>
   </nav>
 
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- Immagini del carosello -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/LibreriaAntica.png" alt="Immagine 1">
-      </div>
-      <div class="carousel-item">
-        <img src="img/LibreriaAntica.png" alt="Immagine 2">
-      </div>
-      <div class="carousel-item">
-        <img src="img/LibreriaAntica.png" alt="Immagine 3">
-      </div>
-    </div>
 
-    <!-- Controlli del carosello -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-<<<<<<< HEAD
-      <span class="visually-hidden">Precedente</span>
-=======
-      <span class="visually-hidden">Precedente </span>
->>>>>>> branch 'main' of https://github.com/smartire1/Libreria.git
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Successivo</span>
-    </button>
-  </div>
+<img src="img/LibreriaAntica.png" alt="Immagine fissa" class="image-above" style="width: 100%; height: 150%;">
 
+
+
+
+ <!-- Controlli del footer -->
   <div class="footer-container">
     <div class="container">
       <div class="row">
