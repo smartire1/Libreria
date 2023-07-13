@@ -8,7 +8,7 @@
 	
 		function validateForm() {
 			let x = document.forms["log_in"]["email"].value;
-			let y = document.forms["log_in"]["pass"].value:
+			let y = document.forms["log_in"]["pass"].value;
 			if(x == "" || y == "") {
 				alert("riempi tutti i campi");
 				return false;
@@ -38,7 +38,7 @@
 	
 		<div class="container">
 			<p class="lead text-center">Inserisci email e password</p>
-				<form name="log_in" action="Login" method="post" onSubmit="return validateForm()">					
+				<form name="log_in" action="Login" method="post" onsubmit="return validateForm()">					
 			  	<div class="container">
 				  <div class="row text-center">
 					<div class="col-sm-12">
