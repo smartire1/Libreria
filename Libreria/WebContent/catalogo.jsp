@@ -24,21 +24,9 @@
 			</div>
 		</nav>
 	</div>
-
-	<div class="container text-center">
-	  <div class="row">
-	    <div class="col">
-	      	<form action="login.jsp" method="get">
-				<button href="#" type="submit" class="btn btn-success" onClick="alert('Effettua prima il login')">Carrello</button>
-			</form>
-	    </div>
-	    <div class="col">
-	      	<form action="login.jsp" method="get">
-				<button type="submit" class="btn btn-success">Log-in</button>
-			</form>
-	    </div>
-	  </div>
-	</div>
+ 
+ 
+ 	<jsp:include page="navbar.jsp" />
 
 
     <%String db_url = "jdbc:mysql://localhost:3306/Librerie";
