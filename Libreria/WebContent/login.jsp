@@ -3,6 +3,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	
+	<script>
+	
+		function validateForm() {
+			let x = document.forms["log_in"]["email"].value;
+			let y = document.forms["log_in"]["pass"].value:
+			if(x == "" || y == "") {
+				alert("riempi tutti i campi");
+				return false;
+			}
+		}
+	
+	</script>
+	
 	<meta charset="ISO-8859-1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title>AS-New Reading</title>
@@ -24,7 +38,7 @@
 	
 		<div class="container">
 			<p class="lead text-center">Inserisci email e password</p>
-				<form action="Login" method="post">					
+				<form name="log_in" action="Login" method="post" onSubmit="return validateForm()">					
 			  	<div class="container">
 				  <div class="row text-center">
 					<div class="col-sm-12">
