@@ -151,7 +151,7 @@
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/?hl=it">
+              <a href="https://www.google.com/?hl=it">
                 <i class="fab fa-instagram fa-2x"></i>
               </a>
             </li>
