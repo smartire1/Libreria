@@ -12,6 +12,7 @@
     align-items: center;
     margin-bottom: 10px;
   }
+  
   .form-group strong {
     margin-right: 10px;
     width: 100px;

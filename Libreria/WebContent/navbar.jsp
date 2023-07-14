@@ -12,6 +12,7 @@
       height: 20px;
       margin-left: 5px;
     }
+    
     .navbar-nav .nav-item + .nav-item {
       margin-left: 100px;
     }

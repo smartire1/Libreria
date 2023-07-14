@@ -41,8 +41,6 @@
           <li class="nav-item">
             <form action="UserOrdini"  method="post"> <a class="nav-link">Ordini</a></form>
           </li>
-          
-         
           <li class="nav-item"> 
             <a class="nav-link" href="carrello.jsp">
             Carrello
