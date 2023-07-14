@@ -1,26 +1,4 @@
-
-<style>
-  .navbar-nav {
-      font-size: 20px;
-      justify-content: center;
-    }
-     .navbar-nav .nav-link {
-      padding: 10px 20px;
-    }
-    .navbar-text img {
-      width: 20px;
-      height: 20px;
-      margin-left: 5px;
-    }
-    
-    .navbar-nav .nav-item + .nav-item {
-      margin-left: 100px;
-    }
-
-
-</style>
-
-
+<link href="css/navbar.css" rel="stylesheet">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">

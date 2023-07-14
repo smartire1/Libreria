@@ -74,7 +74,7 @@
 		                            <li><strong>titolo:</strong> <%= res.getString("titolo") %></li>
 		                            <li><strong>prezzo:</strong> &#8364 <%= res.getString("prezzo") %></li>
 		                            <li><strong>casaEditrice:</strong> <%= res.getString("casaEditrice") %></li>
-		                            <li><img class="img-thumbnail" alt="img" src="images/as.jpg"></li>
+		                            <li><img class="img-thumbnail" alt="img" src="<%= res.getString("img") %>" style="width: 200px; height: 300px;"/></li>
 		                        </ul>
 					            <div class="container">
 					                 <Button type="submit" class="btn btn-success">Aggiungi al carrello</Button>

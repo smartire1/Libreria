@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="css/footer.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/ico.png">
   <title>AS-New Reading</title>
 </head>
 <body>
@@ -17,7 +18,6 @@
 
   <jsp:include page="navbar.jsp" />
 
-  <span class="border border-light"></span>
   <img src="img/LibreriaAntica.png" alt="Immagine fissa" class="image-above" style="width: 100%; height: 65%; object-fit: cover;">
 
   <footer>
