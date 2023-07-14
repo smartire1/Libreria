@@ -9,11 +9,12 @@
 </head>
 <body>
 
+
   	<div class="container">
 	  <div class="row">
 	    <div class="col-sm-12 text-center">
 	    	<form >
-				<a href="index.jsp"><img class="logo logo-dark" alt="Logo" src="images/eer.png" style="width: 80px; height: 60px;"></a>
+				<a href="index.jsp"><img class="logo logo-dark" alt="Logo" src="img/as.png" style="width: 150px; height: 150px;"></a>
 			</form>
 			<p class="lead">AS-New Reading</p>
 	    </div>
