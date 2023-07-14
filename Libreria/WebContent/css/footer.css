@@ -1,0 +1,41 @@
+@charset "ISO-8859-1";
+
+    .logo-container {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+   
+    html, body {
+      height: 100%;
+    }
+
+    .footer-container {
+      margin-top: 0px;
+      min-height: 175%;
+      background-color: brown;
+      padding: 75px;
+      color: white;
+    }
+    .social-icons {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+    .social-icons li {
+      display: inline-block;
+      margin-right: 30px;
+    }
+    .social-icons a {
+      color: white;
+    }
+    .footer-container p {
+     font-size: 30px;
+    }
+  
+	.product-text {
+  	font-size: 50px;
+  	margin-bottom: 50px;
+  	color: black; /* Aggiungi il colore desiderato per il testo */
+	}

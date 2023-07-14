@@ -21,44 +21,48 @@
 				    </div>
 				  </div>
 				  
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.jsp">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="catalogo.jsp">I Nostri Libri</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contatti.jsp">Contatti</a>
-          </li>
-         
-          <li class="nav-item">
-            <form action="UserOrdini"  method="post"> <a class="nav-link">Ordini</a></form>
-          </li>
-          <li class="nav-item"> 
-            <a class="nav-link" href="carrello.jsp">
-            Carrello
-            <span class="navbar-text">
-             <img src="img/Cart.png" alt="Carrello">
-            </span>
-           </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Logout.java">Logout
-             <span class="navbar-text">
-             </span>
-             </a>
-            </li>   
-        </ul>
-      </div>
-    </div>
-  </nav>
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				    <div class="container">
+				      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				        <span class="navbar-toggler-icon"></span>
+				      </button>
+				      <div class="collapse navbar-collapse" id="navbarNav">
+				        <ul class="navbar-nav">
+				          <li class="nav-item">
+				            <a class="nav-link" href="index.jsp">Home</a>
+				          </li>
+				          <li class="nav-item">
+				            <a class="nav-link" href="catalogo.jsp">I Nostri Libri</a>
+				          </li>
+				          <li class="nav-item">
+				            <a class="nav-link" href="contatti.jsp">Contatti</a>
+				          </li>
+				         
+				          <li class="nav-item">
+				            <form action="UserOrdini"  method="post" name="ordiniUser"> 
+				            		<a href="javascript:void(0)" class="nav-link" onclick="document.forms['ordiniUser'].submit()">Ordini</a>
+				            </form>
+				          </li>
+				          <li class="nav-item"> 
+				            <a class="nav-link" href="carrello.jsp">
+				            Carrello
+				            <span class="navbar-text">
+				             <img src="img/Cart.png" alt="Carrello">
+				            </span>
+				           </a>
+				          </li>
+				          <li class="nav-item">
+				            <form action="Logout"  method="post" name="log-out"> 
+				            	<a href="javascript:void(0)" class="nav-link" onclick="document.forms['log-out'].submit()">Logout</a>
+				            </form>
+				             <span class="navbar-text">
+				             </span>
+				             </a>
+				            </li>   
+				        </ul>
+				      </div>
+				    </div>
+				  </nav>
 			</div>
 		</nav>
 	</div>

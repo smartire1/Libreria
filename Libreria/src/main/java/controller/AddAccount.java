@@ -47,12 +47,6 @@ public class AddAccount extends HttpServlet {
 			String email = request.getParameter("email");
 			String pass = request.getParameter("pass");
 			
-			if (nome.isEmpty() || cognome.isEmpty() || email.isEmpty() || pass.isEmpty()) {
-				
-				request.setAttribute("Message", "Riempire ogni campo richiesto");
-	            request.getRequestDispatcher("/signin.jsp").forward(request, response);	
-	            return;
-			}
 			
 			for(Customer c: customer) {
 				if(c.getEmail().equals(email)) {
