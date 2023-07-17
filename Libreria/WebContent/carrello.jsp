@@ -25,27 +25,22 @@
 				  <div class="row">
 				    <div class="col-sm-12 text-center">
 				    	<form >
-							<a href="index_logged.jsp"><img class="logo logo-dark" alt="Logo" src="img/as.png" style="width: 150px; height: 150px;"></a>
+							<a href="index.jsp"><img class="logo logo-dark" alt="Logo" src="img/as.png" style="width: 150px; height: 150px;"></a>
 						</form>
-						<p class="lead">Accesso eseguito come: </p>
-						<%out.print(session.getAttribute("email")); %>
 				    </div>
 				  </div>
 			</div>
 		</nav>
 	</div>	
 	
+	<jsp:include page="navbar.jsp" />
+	
 	<div class="container text-center">
 	  <br>
 	  <div class="row">
-	    <div class="col">
-			<form action="catalogo_logged.jsp" method="get">
-				<button type="submit" class="btn btn-success">Catalogo</button>
-			</form>
-	    </div>
 		<div class="col text-center">
 	     	<form action="Checkout" method="post">
-				<button class="btn btn-success">Acquista</button>
+				<button class="btn btn-warning">Acquista</button>
 			</form>
 	    </div>
 	    <div class="col text-center">
@@ -53,11 +48,6 @@
 				<button type="submit" class="btn btn-success">Ordini</button>
 			</form>
 		</div>	    
-	    <div class="col">
-			<form action="Logout" method="post">
-				<button class="btn btn-danger">Logout</button>
-			</form>
-	    </div>
 	  </div>
 	</div>
 
@@ -127,6 +117,7 @@
              </div>
     </div>
 	<br>
- 	
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> 	
 </body>
 </html>

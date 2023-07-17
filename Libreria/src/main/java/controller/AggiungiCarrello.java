@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.CartDAO;
 import dao.ProductsDAO;
@@ -29,13 +28,13 @@ public class AggiungiCarrello extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		HttpSession session = request.getSession();
 		final String db_url = "jdbc:mysql://localhost:3306/Librerie";
 		final String user_db = "root";
 		final String pass_db = "admin";
 		Connection connessione;
 		Products toAdd;
 		String isbn = request.getParameter("isbn");
+		String email = request.getParameter("email");
 		
 		
 		try {
@@ -46,9 +45,9 @@ public class AggiungiCarrello extends HttpServlet{
 			toAdd = productsDAO.getProductByIsbn(isbn);
 			
 			CartDAO CartDAO = new CartDAO(connessione);
-			CartDAO.createCart(new CartItem(toAdd.getIsbn(), toAdd.getTitolo(), toAdd.getPrezzo(), toAdd.getCasaEditrice(),session.getAttribute("email").toString()));
+			CartDAO.createCart(new CartItem(toAdd.getIsbn(), toAdd.getTitolo(), toAdd.getPrezzo(), toAdd.getCasaEditrice(),email));
 			
-			request.getRequestDispatcher("/catalogo_logged.jsp").forward(request, response);
+//			request.getRequestDispatcher("/catalogo.jsp").forward(request, response);	unused(gestione della richiesta asincrona)
 			return;
 			
 		} catch(Exception e) {

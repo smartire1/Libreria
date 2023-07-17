@@ -60,7 +60,7 @@ public class Login extends HttpServlet {
 					session.setAttribute("nome", c.getNome());
 					session.setAttribute("cognome", c.getCognome());
 					session.setAttribute("email", email);
-					request.getRequestDispatcher("/index_logged.jsp").forward(request, response);
+					request.getRequestDispatcher("/index.jsp").forward(request, response);
 					return;
 				}
 			}
@@ -91,7 +91,7 @@ public class Login extends HttpServlet {
 						System.out.println("Accesso Riuscito");
 						HttpSession session = request.getSession();
 						session.setAttribute("email", nome);
-						request.getRequestDispatcher("/index_logged.jsp").forward(request, response);
+						request.getRequestDispatcher("/index.jsp").forward(request, response);
 						return;
 					}
 				}

@@ -13,5 +13,10 @@
     }
     
     .navbar-nav .nav-item + .nav-item {
-      margin-left: 100px;
+      margin-left: 190px;
     }
+    
+    .navbar-nav .nav-link {
+  		white-space: nowrap;
+	}
+    

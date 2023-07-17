@@ -60,7 +60,7 @@ public class AddAccount extends HttpServlet {
 			CustomerDAO.addCustomer(toAdd);
 			HttpSession session = request.getSession();
 			session.setAttribute("email", email);
-			request.getRequestDispatcher("/index_logged.jsp").forward(request, response);
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			
 			return;
 		} catch (Exception e) {

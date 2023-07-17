@@ -1,7 +1,7 @@
 <br>
 				  <div class="row">
 				    <div class="col text-center">
-				      	<form action="catalogo_logged.jsp" method="get">
+				      	<form action="catalogo.jsp" method="get">
 							<button type="submit" class="btn btn-success">Catalogo</button>
 						</form>
 				    </div>

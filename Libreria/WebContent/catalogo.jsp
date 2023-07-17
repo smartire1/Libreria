@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <title>AS-New Reading</title>
+  <script src="js/addCart.js"></script>
 <link rel="icon" type="image/png" href="img/ico.png">
 </head>
 <body>
@@ -51,17 +52,21 @@
                     <div class="pricingTable">
                         <h3 class="title"><%= res.getString("titolo") %></h3>           
                         <span class="subtitle"></span>
-                        <form>
+                        <form id="formAggiunta" method="post">
 	                        <ul class="pricing-content">
 	                        <br>
-	                            <li><strong>isbn:</strong>  <%= res.getString("isbn") %></li>
-	                            <li><strong>titolo:</strong> <%= res.getString("titolo") %></li>
+	                            <li><strong>isbn:</strong>  <%= res.getString("isbn") %>  <input id="isbn" name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></li>
+	                            <li><strong>titolo:</strong> <%= res.getString("titolo") %> <input id="emailSession" name="emailSession" type="hidden" value="<%= res.getString("isbn") %>"/> </li>
 	                            <li><strong>prezzo:</strong> &#8364 <%= res.getString("prezzo") %></li>
 	                            <li><strong>casaEditrice:</strong> <%= res.getString("casaEditrice") %></li>
 	                            <li><img class="img-thumbnail" alt="img" src="<%= res.getString("img") %>" style="width: 200px; height: 300px;"/></li>
 	                        </ul>
 	                        <div class="container">
-	                      		<button type="submit" class="btn btn-success" onClick="alert('Effettua prima il login')">Aggiungi al carrello</button>
+	                        	<% if( session.getAttribute("email") != null && !session.getAttribute("email").equals("") ) { %>
+	                      			<button type="button" class="btn btn-success" onclick="addToCart('<%= res.getString("isbn") %>', '<%= session.getAttribute("email") %>')">Aggiungi al carrello</button>
+	                      		<% } else { %>
+	                      			<button type="button" class="btn btn-success" onclick="alert('E\' necessario loggarsi!');">Aggiungi al carrello</button>
+	                      		<% } %>
 	                      	</div>	                      	
 	                    </form>
                     </div>
@@ -70,6 +75,7 @@
         </div>
 		</div>
 	<br>
-		
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>		
 </body>
 </html>
