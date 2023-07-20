@@ -76,22 +76,16 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				
 				String imageByteArray = request.getParameter("imageByteArray");
 				byte[] imgData = Base64.getDecoder().decode(imageByteArray);
-				
-				if (imgData.length == 0) {
-				    System.out.println("Problema lato client(trasferimento)\n");		    
-				} else {
-					System.out.println("Problema lato server\n");
-					System.out.println(imageByteArray);
-				}
 
 				String fileName = request.getParameter("titolo") + ".png";
-				String filePath = "C:\\Users\\sasyd\\git\\repository\\Libreria\\WebContent\\img\\Products\\" + fileName;
+				String filePath = "C:\\Users\\sasyd\\OneDrive\\DeskLaptop\\TSW\\Z. Progetto\\Libreria\\Libreria\\WebContent\\img\\Products\\" + fileName;
+				String filePathDB = "img/Products/" + fileName;
 				
 				try (FileOutputStream fos = new FileOutputStream(filePath)) {
 				    fos.write(imgData);
 				}				
 				
-				PDAO.addProduct(new Products(isbn ,request.getParameter("titolo"),Double.parseDouble(request.getParameter("prezzo")),request.getParameter("casaEditrice"), filePath));
+				PDAO.addProduct(new Products(isbn ,request.getParameter("titolo"),Double.parseDouble(request.getParameter("prezzo")),request.getParameter("casaEditrice"), filePathDB));
 							
 				request.setAttribute("Success", "Prodotto aggiunto");
 				request.getRequestDispatcher("/admin_inserisci.jsp").forward(request, resp);
