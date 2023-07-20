@@ -1,10 +1,13 @@
 package controller;
 
-import java.io.IOException;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Base64;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +20,7 @@ import dao.CartDAO;
 
 @WebServlet(
 		  name = "OpzioniCatalogo", value = "/OpzioniCatalogo")
-public class OpzioniCatalogo extends HttpServlet{
+public class OpzioniCatalogo <T> extends HttpServlet{
 
 	/**
 	 * 
@@ -36,6 +39,7 @@ public class OpzioniCatalogo extends HttpServlet{
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connessione = DriverManager.getConnection(db_url,user_db,pass_db);
+			request.getParameterNames();
 			String ButtonName = request.getParameter("action");
 			String isbn = request.getParameter("isbn");
 			
@@ -60,11 +64,6 @@ public class OpzioniCatalogo extends HttpServlet{
 			}
 			
 			else if(ButtonName.compareTo("insert") == 0) {
-				if(request.getParameter("isbn").isEmpty() || request.getParameter("titolo").isEmpty()  || request.getParameter("prezzo").isEmpty()  || request.getParameter("casaEditrice").isEmpty() ) {
-					request.setAttribute("ErrorMessage", "Inserisci tutti i campi");
-					request.getRequestDispatcher("/admin_inserisci.jsp").forward(request, resp);
-					return;
-				}
 				ProductsDAO PDAO = new ProductsDAO(connessione);
 				List<Products> controllo = PDAO.getAllProducts();
 				for(Products p: controllo) {
@@ -74,7 +73,26 @@ public class OpzioniCatalogo extends HttpServlet{
 						return;
 					}
 				}
-				PDAO.addProduct(new Products(isbn ,request.getParameter("titolo"),Double.parseDouble(request.getParameter("prezzo")),request.getParameter("casaEditrice")));
+				
+				String imageByteArray = request.getParameter("imageByteArray");
+				byte[] imgData = Base64.getDecoder().decode(imageByteArray);
+				
+				if (imgData.length == 0) {
+				    System.out.println("Problema lato client(trasferimento)\n");		    
+				} else {
+					System.out.println("Problema lato server\n");
+					System.out.println(imageByteArray);
+				}
+
+				String fileName = request.getParameter("titolo") + ".png";
+				String filePath = "C:\\Users\\sasyd\\git\\repository\\Libreria\\WebContent\\img\\Products\\" + fileName;
+				
+				try (FileOutputStream fos = new FileOutputStream(filePath)) {
+				    fos.write(imgData);
+				}				
+				
+				PDAO.addProduct(new Products(isbn ,request.getParameter("titolo"),Double.parseDouble(request.getParameter("prezzo")),request.getParameter("casaEditrice"), filePath));
+							
 				request.setAttribute("Success", "Prodotto aggiunto");
 				request.getRequestDispatcher("/admin_inserisci.jsp").forward(request, resp);
 				return;
@@ -84,7 +102,5 @@ public class OpzioniCatalogo extends HttpServlet{
 			e.printStackTrace();
 		}
 		
-	}
-
-	
+	}	
 }

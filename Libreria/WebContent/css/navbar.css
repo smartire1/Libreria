@@ -12,11 +12,56 @@
       margin-left: 5px;
     }
     
-    .navbar-nav .nav-item + .nav-item {
-      margin-left: 190px;
+/*    #cart {
+    	margin-left:30%;
+    	margin-right:0%;
     }
+    
+    #access {
+    	margin-right:0%;
+    }
+ */  
+	 .navbar-nav .nav-item + .nav-item {
+	    margin-left: 120px;
+	    margin-right: 120px;
+	  }    
+    	
+	@media (max-width: 1700px) {
+	 .navbar-nav .nav-item + .nav-item {
+	    margin-left: 110px;
+	    margin-right: 110px;
+	  }
+	}
+	
+	@media (max-width: 1485px) {
+	.navbar-nav .nav-item + .nav-item {
+	    margin-left: 100px;
+	    margin-right: 100px;
+	  }
+	}
+
+	@media (max-width: 1410px) {
+	 .navbar-nav .nav-item + .nav-item {
+	    margin-left: 80px;
+	    margin-right: 80px;
+	  }
+	}
+	
+	@media (max-width: 1200px) {
+	 .navbar-nav .nav-item + .nav-item {
+	    margin-left: 50px;
+	    margin-right: 50px;
+	  }
+	}
     
     .navbar-nav .nav-link {
   		white-space: nowrap;
+	}
+	
+	@media (max-width: 991px) {
+		.nav-item {
+		margin-left: 50px;
+	    margin-right: 50px;
+		}
 	}
     
