@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+.btn {
+  border-width: 2px;
+  color: brown;
+  background: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  min-width: 155px;
+}
+.btn:hover {
+  background: none;
+  color: #fff;
+  border-color: #ca293e;
+  background-color: #ca293e;
+}
+

@@ -11,7 +11,6 @@
     }
 
     .footer-container {
-      margin-top: 0px;
       min-height: 175%;
       background-color: brown;
       padding: 75px;
@@ -29,6 +28,7 @@
     }
     .social-icons a {
       color: white;
+      display: inline-block;
     }
     .footer-container p {
      font-size: 30px;

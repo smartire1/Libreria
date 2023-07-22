@@ -31,6 +31,23 @@
 		.product-image:hover {
 			opacity: 0.7;
 		}
+		
+		.product-image {
+			width: 200px; 
+			height: 250px;
+		}		
+		@media (max-width: 490px) {
+			.product-image {
+				width: 150px; 
+				height: 200px;
+			}
+		}
+		
+		@media (max-width: 490px) {
+			.texteduce {
+				font-size: 0.8em;
+			}
+		}
 	</style>
 
 </head>
@@ -53,13 +70,13 @@
 							<div class="row">
 								<div class="col-6 d-flex align-items-center">
 									<a href="catalogo.jsp">
-										<img src="img/Products/OnePiece.png" class="d-block product-image" style="width: 200px; height: 250px;" alt="Prodotto1">
+										<img src="img/Products/OnePiece.png" class="d-block product-image" alt="Prodotto1">
 									</a>
 								</div>
 								<div class="col-6 d-flex align-items-center">
 									<ul class="pricing-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-size:24px;">
-										<li><strong>titolo:</strong>One Piece</li>
-										<li><strong>prezzo:</strong>9,99 euro</li>
+										<li><p class="texteduce"><strong>titolo:</strong>One Piece</li>
+										<li><p class="texteduce"><strong>prezzo:</strong>9,99 euro</li>
 									</ul>
 								</div>
 							</div>
@@ -68,13 +85,13 @@
 							<div class="row">
 								<div class="col-6 d-flex align-items-center">
 									<a href="catalogo.jsp">
-										<img src="img/Products/HarryPotter.png" class="d-block product-image" style="width: 200px; height: 250px;" alt="Prodotto2">
+										<img src="img/Products/HarryPotter.png" class="d-block product-image" alt="Prodotto2">
 									</a>
 								</div>
 								<div class="col-6 d-flex align-items-center">
 									<ul class="pricing-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-size:24px;">
-										<li><strong>titolo:</strong>Harry Potter</li>
-										<li><strong>prezzo:</strong>27.99 euro</li>
+										<li><p class="texteduce"><strong>titolo:</strong>Harry Potter</li>
+										<li><p class="texteduce"><strong>prezzo:</strong>27.99 euro</li>
 									</ul>
 								</div>
 							</div>
@@ -83,13 +100,13 @@
 							<div class="row">
 								<div class="col-6 d-flex align-items-center">
 									<a href="catalogo.jsp">
-										<img src="img/Products/DragonBall.png" class="d-block product-image" style="width: 200px; height: 250px;" alt="Prodotto3">
+										<img src="img/Products/DragonBall.png" class="d-block product-image" alt="Prodotto3">
 									</a>
 								</div>
 								<div class="col-6 d-flex align-items-center">
 									<ul class="pricing-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-size:24px;">
-										<li><strong>titolo:</strong>Dragon Ball</li>
-										<li><strong>prezzo:</strong>9,99 euro</li>
+										<li><p class="texteduce"><strong>titolo:</strong>Dragon Ball<p></li>
+										<li><p class="texteduce"><strong>prezzo:</strong>9,99 euro</li>
 									</ul>
 								</div>
 							</div>

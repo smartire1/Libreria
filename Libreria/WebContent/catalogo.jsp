@@ -7,8 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <title>AS-New Reading</title>
+<link href="css/style.css" rel="stylesheet"> 
+  <link href="css/footer.css" rel="stylesheet">
+  <link href="css/card.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <script src="js/addCart.js"></script>
 <link rel="icon" type="image/png" href="img/ico.png">
+
+<style>
+	.col-sm-12  {
+		margin-top:10px;
+	}
+	.col-sm-12 > hr {
+  /* Le regole CSS per l'elemento hr qui */
+}
+
+
+	.price-filter {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  margin-top: 20px;
+	}
+	
+	input[type="range"] {
+	  width: 200px;
+	  
+	}
+</style>
+
 </head>
 <body>
 
@@ -41,41 +68,103 @@
       ResultSet res = cmd.executeQuery(query);%>
       
       <br>
-      <div class="demo">
-        <div class="container demobg">
-            <div class="row text-center">
-            </div>		
-            <div class="row">
-            
-<% while(res.next()){%>			    
-                <div class="col-md-4 col-sm-6 border border-success">
-                    <div class="pricingTable">
-                        <h3 class="title"><%= res.getString("titolo") %></h3>           
-                        <span class="subtitle"></span>
-                        <form id="formAggiunta" method="post">
-	                        <ul class="pricing-content">
-	                        <br>
-	                            <li><strong>isbn:</strong>  <%= res.getString("isbn") %>  <input id="isbn" name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></li>
-	                            <li><strong>titolo:</strong> <%= res.getString("titolo") %> <input id="emailSession" name="emailSession" type="hidden" value="<%= res.getString("isbn") %>"/> </li>
-	                            <li><strong>prezzo:</strong> &#8364 <%= res.getString("prezzo") %></li>
-	                            <li><strong>casaEditrice:</strong> <%= res.getString("casaEditrice") %></li>
-	                            <li><img class="img-thumbnail" alt="img" src="<%= res.getString("img") %>" style="width: 200px; height: 300px;"/></li>
-	                        </ul>
-	                        <div class="container">
-	                        	<% if( session.getAttribute("email") != null && !session.getAttribute("email").equals("") ) { %>
-	                      			<button type="button" class="btn btn-success" onclick="addToCart('<%= res.getString("isbn") %>', '<%= session.getAttribute("email") %>')">Aggiungi al carrello</button>
-	                      		<% } else { %>
-	                      			<button type="button" class="btn btn-success" onclick="alert('E\' necessario loggarsi!');">Aggiungi al carrello</button>
-	                      		<% } %>
-	                      	</div>	                      	
-	                    </form>
-                    </div>
-                </div> 
-<% }%>		             
-        </div>
+		<div class="container text-center pricingTable">
+		  <div class="row">
+		    <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+		      <p class="lead text-center"> Cerca per ISBN:</p>
+		      <input class="" type="text" placeholder="isbn"/>
+		    </div>
+		    <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+		      <p class="lead">Cerca per casa editrice:</p>
+				<select class="form-select" id="citta" name="citta">
+				  <option value="roma">Adelfi</option>
+				  <option value="milano">Rizzoli</option>
+				  <option value="napoli">Soprani</option>
+				  <option value="firenze">Ferdona</option>
+				  <!-- Aggiungi altre opzioni qui -->
+				</select>
+		    </div>
+		    <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+
+				<div class="price-filter">
+				  <p class="lead text-center"> Cerca per prezzo:</p>
+				  <input type="range" id="max-price" name="max-price" min="0" max="60" step="1" value="60">
+				  <span id="max-price-value">100</span> euro
+				</div>
+
+
+		    </div>
+		    <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+		       <button type="button" class="btn btn-danger " >Applica filtri</button>
+		    </div>
+		  </div>
 		</div>
-	<br>
+		<div class="container text-center pricingTable" style="background-image: url('img/cat.png'); border-radius:15px; background-position: center;">
+		  <div class="row ">
+		  <% while(res.next()){%>	
+		    <div class="col-lg-4 d-flex justify-content-center" style="margin-top: 60px; ">
+				<div class="card pricingTable" style="width: 18rem; border-width: 2px; border-color: brown; background-color: #f2f0f0; border-radius:15px;">
+				  <h5 class="card-title" style="margin-bottom: 10px; margin-top: 10px;"><%= res.getString("titolo") %> </h5><hr/>
+				  <span><img src="<%= res.getString("img") %>" class="card-img-top" style="width: 200px; height: 300px;" alt="img"></span>
+				  <br>
+				  <div class="card-body ">
+				    <hr/><p class="card-text"><strong>ISBN: </strong><%= res.getString("isbn") %>  <input id="isbn" name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></p>
+				    <p class="card-text"><strong>casa editrice:  </strong><%= res.getString("casaEditrice") %></p>
+				    <p class="card-text"><strong>prezzo: </strong> <%= res.getString("prezzo") %> euro</p><hr/>
+				    
+	                  <% if( session.getAttribute("email") != null && !session.getAttribute("email").equals("") ) { %>
+	                      <button type="button" class="btn btn-danger" onclick="addToCart('<%= res.getString("isbn") %>', '<%= session.getAttribute("email") %>')">Aggiungi al carrello</button>
+	                  <% } else { %>
+	                      <button type="button" class="btn btn-danger" onclick="alert('E\' necessario loggarsi!');">Aggiungi al carrello</button>
+	                  <% } %>
+				    
+				  </div>
+				</div>		      
+		    </div>
+		    <% } %>
+		  </div>
+		</div>      
+		<br>
+  <footer>
+    <div class="footer-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <p>Seguici sui social per rimanere sempre aggiornato!</p>
+            <ul class="social-icons">
+              <li>
+                <a href="https://twitter.com/login?lang=it">
+                  <i class="fab fa-twitter fa-2x"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/">
+                  <i class="fab fa-facebook fa-2x"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.google.com/?hl=it">
+                  <i class="fab fa-instagram fa-2x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+  const maxPriceInput = document.getElementById('max-price');
+  const maxPriceValue = document.getElementById('max-price-value');
+
+  // Aggiorniamo il valore visualizzato quando l'utente sposta la barra
+  maxPriceInput.addEventListener('input', () => {
+    maxPriceValue.textContent = maxPriceInput.value;
+  });
+</script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>		
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>

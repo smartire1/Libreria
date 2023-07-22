@@ -9,6 +9,7 @@
 	<title>AS-New Reading</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link href="css/footer.css"rel="stylesheet"> 
+	<link href="css/style.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
 
     <script>
@@ -26,7 +27,7 @@
     </script>
 	<style>
 		.image-bg {
-		background-image: url('img/LibreriaAntica.png');
+		background-image: url('img/LibreriaLogin.png');
 		background-size: cover;
 		background-position: center;
 		width: 100%;
@@ -44,8 +45,8 @@
             </div>
         </div>
     </div>
-		<div class="image-bg" style="position: relative;">
-	<div id="loginBox" class="bg-white mx-auto" style=" border: 1px solid; padding: 10px; border-radius: 5px; width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+		<div class="image-bg" style="position: relative; border-top: 2px inset">
+	<div id="loginBox" class="bg-white mx-auto" style=" border: 2px inset; padding: 10px; border-radius: 5px; height: 270px; width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 		<div class="container">
 		    <div class="row justify-content-center">
 		        <div class="col-sm-12 text-center">
@@ -67,7 +68,7 @@
 		                        </div>
 		                        <div class="col-sm-12">
 		                            <br>
-		                            <input type="submit" value="Avanti" class="btn btn-success btn-sm">
+		                            <input type="submit" value="Avanti" class="btn btn-danger btn-sm">
 		                        </div>
 		                    </div>
 		                </div>
