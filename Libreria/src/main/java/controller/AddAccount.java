@@ -60,6 +60,8 @@ public class AddAccount extends HttpServlet {
 			CustomerDAO.addCustomer(toAdd);
 			HttpSession session = request.getSession();
 			session.setAttribute("email", email);
+			session.setAttribute("nome", nome);
+			session.setAttribute("cognome", cognome);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			
 			return;
