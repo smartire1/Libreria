@@ -8,9 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <title>AS-New Reading</title>
 <link href="css/style.css" rel="stylesheet"> 
-  <link href="css/footer.css" rel="stylesheet">
-  <link href="css/card.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+<link href="css/footer.css" rel="stylesheet"> 
+<link href="css/card.css" rel="stylesheet"> 
   <script src="js/addCart.js"></script>
 <link rel="icon" type="image/png" href="img/ico.png">
 
@@ -37,9 +36,9 @@
 </style>
 
 </head>
-<body>
+<body class="bgSand">
 
-	<div class="nav-container">
+	<div class="nav-container" style="background-color: white;">
 		<nav class="centered-logo top-bar">
 		  	<div class="container">
 				  <div class="row">
@@ -57,7 +56,12 @@
  	<jsp:include page="navbar.jsp" />
 
 
-    <%String db_url = "jdbc:mysql://localhost:3306/Librerie";
+    <%ResultSet res;
+    if(null != request.getAttribute("show")) {
+    	res = (ResultSet) request.getAttribute("show");
+    }
+    else {
+      String db_url = "jdbc:mysql://localhost:3306/Librerie";
       String user_db = "root";
       String pass_db = "admin";
       Connection connessione = null;
@@ -65,40 +69,42 @@
       connessione = DriverManager.getConnection(db_url,user_db,pass_db);
       Statement cmd = connessione.createStatement();
       String query = "select * from Products";
-      ResultSet res = cmd.executeQuery(query);%>
+      res = cmd.executeQuery(query); }%>
       
       <br>
+      <form action="ShowCatalogo" method="post">
 		<div class="container text-center pricingTable">
 		  <div class="row">
-		    <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+		    <div class="col-lg-3 col-md-12 col-sm-12 ">
 		      <p class="lead text-center"> Cerca per ISBN:</p>
-		      <input class="" type="text" placeholder="isbn"/>
+		      <input name="Fisbn" type="text" placeholder="isbn"/>
 		    </div>
-		    <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+		    <div class="col-lg-3 col-md-12 col-sm-12 ">
 		      <p class="lead">Cerca per casa editrice:</p>
-				<select class="form-select" id="citta" name="citta">
-				  <option value="roma">Adelfi</option>
-				  <option value="milano">Rizzoli</option>
-				  <option value="napoli">Soprani</option>
-				  <option value="firenze">Ferdona</option>
+				<select class="form-select" id="FcasaEditrice" name="FcasaEditrice">
+				  <option value="" selected>Tutte</option>
+				  <option value="Adelfi">Adelfi</option>
+				  <option value="Rizzoli">Rizzoli</option>
+				  <option value="Soprani">Soprani</option>
+				  <option value="Ferdona">Ferdona</option>
 				  <!-- Aggiungi altre opzioni qui -->
 				</select>
 		    </div>
-		    <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+		    <div class="col-lg-3 col-md-12 col-sm-12 ">
 
 				<div class="price-filter">
 				  <p class="lead text-center"> Cerca per prezzo:</p>
-				  <input type="range" id="max-price" name="max-price" min="0" max="60" step="1" value="60">
-				  <span id="max-price-value">100</span> euro
+				  <input type="range" id="max-price" name="Fmaxprice" min="0" max="50" step="1" value="50">
+				  <span id="max-price-value">50</span> euro
 				</div>
-
-
+				
 		    </div>
-		    <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
-		       <button type="button" class="btn btn-danger " >Applica filtri</button>
+		    <div class="col-lg-3 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+		       <button type="submit" class="btn btn-danger ">Applica filtri</button>
 		    </div>
 		  </div>
 		</div>
+	</form>
 		<div class="container text-center pricingTable" style="background-image: url('img/cat.png'); border-radius:15px; background-position: center;">
 		  <div class="row ">
 		  <% while(res.next()){%>	
@@ -153,7 +159,6 @@
       </div>
     </div>
   </footer>
-  
   <script>
   const maxPriceInput = document.getElementById('max-price');
   const maxPriceValue = document.getElementById('max-price-value');
@@ -164,6 +169,8 @@
   });
 </script>
   
+
+ 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>
