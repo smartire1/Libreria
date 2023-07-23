@@ -19,13 +19,14 @@ public class CartDAO {
     }
 
     public void createCart(CartItem cart) throws SQLException {
-        String query = "INSERT INTO Cart (isbn , titolo, prezzo, casaEditrice, Customer) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Cart (isbn , titolo, prezzo, casaEditrice, img, Customer) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
         	statement.setString(1, cart.getIsbn());
             statement.setString(2, cart.getTitolo());
             statement.setDouble(3, cart.getPrezzo());
             statement.setString(4, cart.getCasaEditrice());
-            statement.setString(5, cart.getCustomer());
+            statement.setString(5, cart.getImg());
+            statement.setString(6, cart.getCustomer());
             statement.executeUpdate();
         }
     }
@@ -41,8 +42,9 @@ public class CartDAO {
                 	String titolo = resultSet.getString("titolo");
                     Double prezzo = resultSet.getDouble("prezzo");
                     String casa = resultSet.getString("casaEditrice");
+                    String img = resultSet.getString("img");
                     String Customer = resultSet.getString("Customer");
-                    CartItem cart = new CartItem(isbn, titolo, prezzo, casa, Customer);
+                    CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img, Customer);
                     return cart;
                 }
             }
@@ -60,8 +62,9 @@ public class CartDAO {
             	String titolo = resultSet.getString("titolo");
                 Double prezzo = resultSet.getDouble("prezzo");
                 String casa = resultSet.getString("casaEditrice");
+                String img = resultSet.getString("img");
                 String Customer = resultSet.getString("Customer");
-                CartItem cart = new CartItem(isbn, titolo, prezzo, casa, Customer);
+                CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img,  Customer);
                 carts.add(cart);
             }
         }
@@ -79,8 +82,9 @@ public class CartDAO {
 	            	String titolo = resultSet.getString("titolo");
 	                Double prezzo = resultSet.getDouble("prezzo");
 	                String casa = resultSet.getString("casaEditrice");
+	                String img = resultSet.getString("img");
 	                String Customer = resultSet.getString("Customer");
-	                CartItem cart = new CartItem(isbn, titolo, prezzo, casa, Customer);
+	                CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img, Customer);
 	                carts.add(cart);
 	            }
         	 }

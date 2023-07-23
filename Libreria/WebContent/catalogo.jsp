@@ -94,8 +94,8 @@
 
 				<div class="price-filter">
 				  <p class="lead text-center"> Cerca per prezzo:</p>
-				  <input type="range" id="max-price" name="Fmaxprice" min="0" max="50" step="1" value="50">
-				  <span id="max-price-value">50</span> euro
+				  <input type="range" id="max-price" name="Fmaxprice" min="0" max="30" step="1" value="30">
+				  <span id="max-price-value">30</span> euro
 				</div>
 				
 		    </div>

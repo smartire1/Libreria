@@ -13,13 +13,16 @@
 
 <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="css/footer.css" rel="stylesheet">    
+	<link href="css/footer.css" rel="stylesheet"> 
+	<link href="css/card.css" rel="stylesheet"> 
+	<link href="css/style.css" rel="stylesheet">   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link href="css/style.css" rel="stylesheet"> 
 <title>AS-New Reading</title>
 </head>
-<body>
+<body class="bgSand">
 
-	<div class="nav-container">
+	<div class="nav-container" style="background-color: white;">
 		<nav class="centered-logo top-bar">
 		  	<div class="container">
 				  <div class="row">
@@ -40,12 +43,12 @@
 	  <div class="row">
 		<div class="col text-center">
 	     	<form action="Checkout" method="post">
-				<button class="btn btn-warning">Acquista</button>
+				<button class="btn btn-danger">Acquista</button>
 			</form>
 	    </div>
 	    <div class="col text-center">
 	      	<form action="UserOrdini" method="post">
-				<button type="submit" class="btn btn-success">Ordini</button>
+				<button type="submit" class="btn btn-danger">Ordini</button>
 			</form>
 		</div>	    
 	  </div>
@@ -71,35 +74,38 @@
       %>
       
       <br>
-      <div class="demo">
-      	<div class="container demobg">	
-            <div class="row">
+		<div class="container text-center pricingTable" style="background-image: url('img/cat.png'); border-radius:15px; background-position: center;">
+            <div class="row row-cols-1">
             	
-				<%if(res.next()) {
-					do { %>	      
-	    	        	<div class="col-md-4 col-sm-6 border border-success">
-	                    	<div class="pricingTable">
-	                    		<br>
-	                        	<h3 class="title"><%= res.getString("titolo") %></h3>              
-	                        	<span class="subtitle"></span>
-	                        	<form action="RimuoviCarrello" method="post">
-			                        <ul class="pricing-content">
-			                            <li><strong>isbn:</strong>  <%= res.getString("isbn") %> <input name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></li>
-			                            <li><strong>titolo:</strong> <%= res.getString("titolo") %></li>
-			                            <li><strong>prezzo:</strong> &#8364 <%= res.getString("prezzo") %></li>
-			                            <li><strong>casaEditrice:</strong> <%= res.getString("casaEditrice") %></li>
-			                        </ul>
-						            <div class="container">
-						                 <Button type="submit" class="btn btn-success">Rimuovi</Button>
-						            </div>
-			                    </form>
-	                    	</div>
-	                	</div> 
-	      			<% } while(res.next());
-	      			}
-	      			else {%>
-	      				<h3 class="title text-center">Il carrello è vuoto...</h3>
-	      			<%} %>
+			<% if (res.next()) {
+			     do { %>	      
+			        <div class="col d-flex justify-content-center">
+			          <div class="card pricingTable d-flex flex-column align-items-center">
+			            <div class="">
+			              <h3 class="title"><%= res.getString("titolo") %></h3>
+			              <img src="<%= res.getString("img") %>" class="card-img-top" style="width: 200px; height: 300px;" alt="img">
+			            </div>
+			            <div class="">
+			              <form action="RimuoviCarrello" method="post">
+			                <ul class="pricing-content">
+			                  <li><strong>isbn:</strong>  <%= res.getString("isbn") %> <input name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></li>
+			                  <li><strong>titolo:</strong> <%= res.getString("titolo") %></li>
+			                  <li><strong>prezzo:</strong> &#8364 <%= res.getString("prezzo") %></li>
+			                  <li><strong>casaEditrice:</strong> <%= res.getString("casaEditrice") %></li>
+			                </ul>
+			                <div class="container">
+			                  <Button type="submit" class="btn btn-danger">Rimuovi</Button>
+			                </div>
+			              </form>
+			            </div>
+			          </div>
+			        </div> 
+			  <% } while(res.next());
+			} else { %>
+			    <h3 class="title text-center">Il carrello è vuoto...</h3>
+			<% } %>
+
+
 	      			
 	      			<br>
 	      			

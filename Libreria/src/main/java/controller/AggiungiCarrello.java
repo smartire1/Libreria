@@ -45,7 +45,7 @@ public class AggiungiCarrello extends HttpServlet{
 			toAdd = productsDAO.getProductByIsbn(isbn);
 			
 			CartDAO CartDAO = new CartDAO(connessione);
-			CartDAO.createCart(new CartItem(toAdd.getIsbn(), toAdd.getTitolo(), toAdd.getPrezzo(), toAdd.getCasaEditrice(),email));
+			CartDAO.createCart(new CartItem(toAdd.getIsbn(), toAdd.getTitolo(), toAdd.getPrezzo(), toAdd.getCasaEditrice(), toAdd.getImg(), email));
 			
 //			request.getRequestDispatcher("/catalogo.jsp").forward(request, response);	unused(gestione della richiesta asincrona)
 			return;
