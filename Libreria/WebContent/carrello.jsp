@@ -60,27 +60,37 @@
     <div class="container text-center pricingTable" id="table-bg">
         <div class="row row-cols-1">
             <% if (res.next()) {
-                 do { %>          
+                 do { %>  
                     <div class="col d-flex justify-content-center">
-                        <div class="card pricingTable">
-                            <div>
-                                <h3 class="title"><%= res.getString("titolo") %></h3>
-                                <img src="<%= res.getString("img") %>" class="card-img-top">
-                            </div>
-                            <div class="card-body">
-                                <form action="RimuoviCarrello" method="post">
-                                    <ul class="pricing-content">
-                                        <hr/>
-                                        <li><strong>isbn:</strong>  <%= res.getString("isbn") %> <input name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></li>
-                                        <li><strong>prezzo:</strong> &#8364 <%= res.getString("prezzo") %></li>
-                                        <li><strong>casaEditrice:</strong> <%= res.getString("casaEditrice") %></li>
-                                        <hr/>
-                                    </ul>
-                                    <div class="container">
-                                        <Button type="submit" class="btn btn-danger">Rimuovi</Button>
-                                    </div>
-                                </form>
-                            </div>
+                        <div class="pricingTable">                 
+							<div class="container text-center">
+							  <div class="row">
+							    <div class="col">
+		                            <div>
+		                                <h3 class="title"><%= res.getString("titolo") %></h3>
+		                                <img src="<%= res.getString("img") %>" class="card-img-top">
+		                                
+		                            </div>
+							    </div>
+							    <div id="verticalSeparator" class="col d-flex justify-content-center align-items-center">
+		                            <div class="card-body">
+		                                <form action="RimuoviCarrello" method="post">
+		                                	
+		                                    <ul class="pricing-content">
+		                                        <hr/>
+		                                        <li><strong>isbn:</strong>  <%= res.getString("isbn") %> <input name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></li>
+		                                        <li><strong>prezzo:</strong> &#8364 <%= res.getString("prezzo") %></li>
+		                                        <li><strong>casaEditrice:</strong> <%= res.getString("casaEditrice") %></li>
+		                                        <hr/>
+		                                    </ul>
+		                                    <div class="container">
+		                                        <Button type="submit" class="btn btn-danger">Rimuovi</Button>
+		                                    </div>
+		                                </form>
+		                            </div>
+							    </div>
+							  </div>
+							</div>                        
                         </div>
                     </div> 
               <% } while(res.next());

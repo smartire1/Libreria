@@ -47,8 +47,8 @@ padding: 25px 0;
 }
 .pricingTable img{
 	border-radius: 5px;
-	height: 400px;
-	width: 275px;
+	height: 350px;
+	width: 225px;
     display: block;
     margin: auto;
 }
@@ -103,6 +103,8 @@ padding: 25px 0;
     background-color: #eef0f2;
     border-color: #ca293e;
 }
+
+
 
 @media only screen and (max-width: 1200px){
     .pricingTable{ margin-bottom: 30px; }
