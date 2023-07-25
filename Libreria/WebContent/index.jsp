@@ -8,62 +8,24 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link href="css/footer.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet"> 
 	<link rel="icon" type="image/png" href="img/ico.png">
 	<title>AS-New Reading</title>
-
-	<style>
-		.image-bg {
-			background-image: url('img/LibreriaAntica.png');
-			background-size: cover;
-			background-position: center;
-			width: 100%;
-			height: 65%;
-		}
-
-		.row-border {
-			border: 2px solid red;
-			padding: 10px;
-		}
-		.product-image {
-			transition: opacity 0.3s ease;
-		}
-		
-		.product-image:hover {
-			opacity: 0.7;
-		}
-		
-		.product-image {
-			width: 200px; 
-			height: 250px;
-		}		
-		@media (max-width: 490px) {
-			.product-image {
-				width: 150px; 
-				height: 200px;
-			}
-		}
-		
-		@media (max-width: 490px) {
-			.texteduce {
-				font-size: 0.8em;
-			}
-		}
-	</style>
-
+	
 </head>
 <body>
 	<div class="logo-container">
 		<a href="index.jsp">
-			<img src="img/as.png" alt="Logo" style="width: 150px; height: 150px;">
+			<img src="img/as.png" alt="Logo">
 		</a>
 	</div>
 
 	<jsp:include page="navbar.jsp" />
 
-	<div class="image-bg" style="position: relative;">
-		<div class="bg-white mx-auto border border-danger border-2 p-3 rounded" style="width: 100%; max-width: 600px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-image: url('img/caroselloWalpaper.png'); background-size: cover;">
+	<div class="image-bg">
+		<div class="index-carousel bg-white mx-auto border border-danger border-2 p-3 rounded">
 			<div class="container ">
-				<h4 style="font-family: Didot, serif; font-style: italic; margin-right:50px; margin-bottom:-5px; font-variant: small-caps; text-align: right;"><strong>Di Tendenza</strong></h4>
+				<h4><strong>Di Tendenza</strong></h4>
 				<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
@@ -74,7 +36,7 @@
 									</a>
 								</div>
 								<div class="col-6 d-flex align-items-center">
-									<ul class="pricing-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-size:24px;">
+									<ul class="pricing-content">
 										<li><p class="texteduce"><strong>titolo:</strong>One Piece</li>
 										<li><p class="texteduce"><strong>prezzo:</strong>9,99 euro</li>
 									</ul>
@@ -89,7 +51,7 @@
 									</a>
 								</div>
 								<div class="col-6 d-flex align-items-center">
-									<ul class="pricing-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-size:24px;">
+									<ul class="pricing-content">
 										<li><p class="texteduce"><strong>titolo:</strong>Harry Potter</li>
 										<li><p class="texteduce"><strong>prezzo:</strong>27.99 euro</li>
 									</ul>
@@ -104,7 +66,7 @@
 									</a>
 								</div>
 								<div class="col-6 d-flex align-items-center">
-									<ul class="pricing-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-size:24px;">
+									<ul class="pricing-content">
 										<li><p class="texteduce"><strong>titolo:</strong>Dragon Ball<p></li>
 										<li><p class="texteduce"><strong>prezzo:</strong>9,99 euro</li>
 									</ul>

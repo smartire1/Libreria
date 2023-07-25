@@ -1,23 +1,153 @@
 @charset "ISO-8859-1";
 
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
 .btn {
-  border-width: 2px;
-  color: brown;
-  background: none;
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  transition: all .3s ease;
-  min-width: 155px;
+    border-width: 2px;
+    color: brown;
+    background: none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    min-width: 155px;
 }
+
 .btn:hover {
-  background: none;
-  color: #fff;
-  border-color: #ca293e;
-  background-color: #ca293e;
+    background: none;
+    color: #fff;
+    border-color: #ca293e;
+    background-color: #ca293e;
 }
 
-.bgSand{
-		border-top: 2px;
-	  	background-color: #dbd1b4;
+.bgSand {
+    border-top: 2px;
+    background-color: #dbd1b4;
 }
 
+.image-bg {
+    background-image: url('../img/LibreriaAntica.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 65%;
+    position: relative;
+}
+
+.image-login {
+    background-image: url('../img/LibreriaLogin.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 65%;
+    position: relative; 
+    border-top: 2px inset
+}
+
+#loginBox {
+	background-color: white;
+	border: 1px solid; 
+	padding: 10px; 
+	border-radius: 5px; 
+	height: 300px; 
+	width: 300px; 
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%);
+}
+
+#loginBox p strong{
+	font-weight: bold;
+}
+
+#loginBox p {
+	font-size: 100%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.logo-container img{
+    width: 130px; 
+    height: 130px;
+}
+
+.col-sm-12  {
+    margin-top:10px;
+}
+
+.price-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+input[type="range"] {
+    width: 175px;
+}
+
+.row-border {
+    border: 2px solid red;
+    padding: 10px;
+}
+
+.index-carousel {
+    width: 100%; 
+    max-width: 600px; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-image: url('../img/caroselloWalpaper.png'); 
+    background-size: cover;
+}
+
+.index-carousel h4{
+    font-family: Didot, serif; 
+    font-style: italic;
+    margin-right:50px; 
+    margin-bottom:-5px; 
+    font-variant: small-caps; 
+    text-align: right;
+}
+
+.index-carousel ul{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    font-size:24px;
+}
+
+.product-image {
+    transition: opacity 0.3s ease;
+}
+
+.product-image:hover {
+    opacity: 0.7;
+}
+
+.product-image {
+    width: 200px; 
+    height: 250px;
+}
+
+@media (max-width: 490px) {
+    .product-image {
+        width: 150px; 
+        height: 200px;
+    }
+}
+
+@media (max-width: 490px) {
+    .texteduce {
+        font-size: 0.8em;
+    }
+}

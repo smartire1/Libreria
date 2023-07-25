@@ -1,15 +1,5 @@
 @charset "ISO-8859-1";
 
-    .logo-container {
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-   
-    html, body {
-      height: 100%;
-    }
-
     .footer-container {
       min-height: 175%;
       background-color: #461F0A;

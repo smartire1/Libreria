@@ -6,77 +6,53 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">	
 	<meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AS-New Reading</title>
+	<link rel="icon" type="image/png" href="img/ico.png">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link href="css/footer.css"rel="stylesheet"> 
 	<link href="css/style.css" rel="stylesheet">
+	<script src="js/validate.js"></script>
 	<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-
-    <script>
-        $(document).ready(function(){
-            $("#inviaForm").submit(function(){
-                if ($("#nome1").val() === "" ||
-                    $("#cognome1").val() === "" ||
-                    $("#email1").val() === "" ||
-                    $("#pass1").val() === "") {
-                    alert('Riempire ogni campo richiesto');
-                    return false;
-                }
-            });
-        });
-    </script>
-	<style>
-		.image-bg {
-		background-image: url('img/LibreriaLogin.png');
-		background-size: cover;
-		background-position: center;
-		width: 100%;
-		height: 65%;
-		}
-	</style>
+	<title>AS-New Reading</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <form>
-                    <a href="index.jsp"><img class="logo logo-dark" alt="Logo" src="img/as.png" style="width: 150px; height: 150px;"></a>
-                </form>
-            </div>
-        </div>
-    </div>
-		<div class="image-bg" style="position: relative; border-top: 2px inset">
-	<div id="loginBox" class="bg-white mx-auto" style=" border: 2px inset; padding: 10px; border-radius: 5px; height: 270px; width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-		<div class="container">
-		    <div class="row justify-content-center">
-		        <div class="col-sm-12 text-center">
-		            <p class="lead"><strong>Inserisci Dati</strong></p>
-		            <form action="AddAccount" method="post" id="inviaForm">
-		                <div class="container">
-		                    <div class="row text-center">
-		                        <div class="col-sm-12">
-		                            <input id="nome1" type="text" placeholder="nome" name="nome" />
-		                        </div>
-		                        <div class="col-sm-12">
-		                            <input id="cognome1" type="text" placeholder="cognome" name="cognome" />
-		                        </div>
-		                        <div class="col-sm-12">
-		                            <input id="email1" type="text" placeholder="email" name="email" />
-		                        </div>
-		                        <div class="col-sm-12">
-		                            <input id="pass1" type="password" placeholder="Password" name="pass" />
-		                        </div>
-		                        <div class="col-sm-12">
-		                            <br>
-		                            <input type="submit" value="Avanti" class="btn btn-danger btn-sm">
-		                        </div>
-		                    </div>
-		                </div>
-		            </form>
-		        </div>
-		    </div>
-		</div>
-		</div>
+ 	<div class="logo-container">
+		<a href="index.jsp">
+			<img src="img/as.png" alt="Logo">
+		</a>
+	</div>
+	
+	<div class="image-login">
+		<div id="loginBox" class="bg-white mx-auto">
+			<div class="container">
+			    <div class="row justify-content-center">
+			        <div class="col-sm-12 text-center">
+			            <p class="lead"><strong>Inserisci Dati</strong></p>
+			            <form action="AddAccount" method="post" id="inviaForm" onsubmit="return validateFormS()">
+			                <div class="container">
+			                    <div class="row text-center">
+			                        <div class="col-sm-12">
+			                            <input id="nome1" type="text" placeholder="nome" name="nome" />
+			                        </div>
+			                        <div class="col-sm-12">
+			                            <input id="cognome1" type="text" placeholder="cognome" name="cognome" />
+			                        </div>
+			                        <div class="col-sm-12">
+			                            <input id="email1" type="text" placeholder="email" name="email" />
+			                        </div>
+			                        <div class="col-sm-12">
+			                            <input id="pass1" type="password" placeholder="Password" name="pass" />
+			                        </div>
+			                        <div class="col-sm-12">
+			                            <br>
+			                            <input type="submit" value="Avanti" class="btn btn-danger btn-sm">
+			                        </div>
+			                    </div>
+			                </div>
+			            </form>
+			        </div>
+			    </div>
+			</div>
+			</div>
 		</div>
 
 

@@ -17,6 +17,12 @@ padding: 25px 0;
     margin-bottom: 10px;
 }
 
+#table-bg {
+	background-image: url('../img/cat.png'); 
+	border-radius:15px; 
+	background-position: center;
+}
+
 .pricingTable .title{
     font-size: 15px;
     font-weight: 900;
@@ -39,10 +45,10 @@ padding: 25px 0;
     color: #262b38;
     margin-bottom: 35px;
 }
-.pricingTable .amount img{
-	border-radius: 25px;
-	height: 300px;
-	width: 300px;
+.pricingTable img{
+	border-radius: 5px;
+	height: 400px;
+	width: 275px;
     display: block;
     margin: auto;
 }
@@ -63,13 +69,23 @@ padding: 25px 0;
     align: center;
 }
 .pricingTable .pricing-content li{
-    font-size: 13px;
+    font-size: 15px;
     font-style: italic;
     color: #8b909d;
     line-height: 26px;
     text-align: center;
 }
 .pricingTable .pricing-content strong{
+    color: #cf4747;
+}
+.pricingTable .card-body p{
+    font-size: 15px;
+    font-style: italic;
+    color: #8b909d;
+    line-height: 26px;
+    text-align: center;
+}
+.pricingTable .card-body strong{
     color: #cf4747;
 }
 .pricingTable .pricingTable-signup{
@@ -88,7 +104,7 @@ padding: 25px 0;
     border-color: #ca293e;
 }
 
-@media only screen and (max-width: 990px){
+@media only screen and (max-width: 1200px){
     .pricingTable{ margin-bottom: 30px; }
-    .pricingTable .amount img{width: 150px; height: 150px;}
+    .pricingTable img{width: 200px; height: 300px;}
 }

@@ -78,7 +78,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				byte[] imgData = Base64.getDecoder().decode(imageByteArray);
 
 				String fileName = request.getParameter("titolo") + ".png";
-				String filePath = "C:\\Users\\sasyd\\OneDrive\\DeskLaptop\\TSW\\Z. Progetto\\Libreria\\Libreria\\WebContent\\img\\Products\\" + fileName;
+				String filePath = "C:\\Users\\sasyd\\OneDrive\\DeskLaptop\\TSW\\A.PC\\Z. Progetto\\Libreria\\Libreria\\WebContent\\img\\Products" + fileName;
 				String filePathDB = "img/Products/" + fileName;
 				
 				try (FileOutputStream fos = new FileOutputStream(filePath)) {
