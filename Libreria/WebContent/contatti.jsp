@@ -1,11 +1,12 @@
  <!DOCTYPE html>
 <html lang="it">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="img/ico.png">
-  <title>AS-New Reading</title>
   <link href="css/style.css" rel="stylesheet"> 
 	<link href="css/footer.css" rel="stylesheet">
+	<title>AS-New Reading</title>
   
   <style>
     .logo-container {
@@ -26,7 +27,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 65%;
     }
 
     .contact-center {
@@ -45,11 +46,11 @@
 </head>
 
 <body>
-  <div class="logo-container">
-    <a href="index.jsp">
-      <img src="img/as.png" alt="Logo" style="width: 150px; height: 150px;">
-    </a>
-  </div>
+	<div class="logo-container">
+		<a href="index.jsp">
+			<img src="img/as.png" alt="Logo">
+		</a>
+	</div>
   
   <jsp:include page="navbar.jsp" />
 		
@@ -57,8 +58,7 @@
   
   <section class="map">
     <div class="map-holder">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.5058998357626!2d40.7773181!3d14.7785808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bc23488bfb48d%3A0x278aaa67b2cdf452!2sLargo+Andrea+Sinno%2C+173%2C+84126+Salerno+SA!5e0!3m2!1sit!2sit!4v1517020866174"
-      width="100%" height="100%" style="border:0"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6043.058601307324!2d14.78893848995371!3d40.772376356289385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bc5a5643af19d%3A0xc377a069f69748ad!2sDipartimento%20di%20Informatica%2C%20Universit%C3%A0%20di%20Salerno!5e0!3m2!1sit!2sit!4v1690295820275!5m2!1sit!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
   
@@ -67,7 +67,7 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
           <h1>Avete Domande? <br>Non esitate a conttatarci per avere informazioni<br></h1>
-          <p class="lead">contatto: As-NewReadings@ewine.com
+          <p class="lead">contatto: info@As-NewReadings.com
             <br>Recapito Telefonico
             <br><img src="img/whatsapp.png"> +0813335566 <br>
             <br>As-New Readings<br> Campania, Salerno
