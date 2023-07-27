@@ -12,7 +12,7 @@
 	<link href="css/style.css" rel="stylesheet">
 	<script src="js/validate.js"></script>
 	<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-	<title>AS-New Reading</title>
+	<title>AS-New Readings</title>
 </head>
 <body>
  	<div class="logo-container">

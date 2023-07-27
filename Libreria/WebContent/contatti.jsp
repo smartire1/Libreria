@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="img/ico.png">
   <link href="css/style.css" rel="stylesheet"> 
 	<link href="css/footer.css" rel="stylesheet">
-	<title>AS-New Reading</title>
+	<title>AS-New Readings</title>
   
   <style>
     .logo-container {
@@ -27,20 +27,61 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 65%;
+      height: 70%;
     }
+    /* Aggiungi questo stile per la sezione con le informazioni */
+    .info {
+      background-color: #f0f0f0; /* Sfondo di un altro colore */
+      padding: 50px 0;
+      margin-top: 0px; /* Margine superiore a 0 per essere attaccato alla mappa */
+      height: 60%;
+      margin-bottom: 0px; /* Margine inferiore negativo per evitare spazi vuoti */  
+   }
 
-    .contact-center {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    height: calc(100vh - 150px); /* Altezza dello schermo intero */
-    }
-    .contact-center h1,
-  .contact-center p {
-    margin: 10px 0;
-    }
+   .info-title {
+     font-weight: bold; /* Testo in grassetto */
+     font-size: 30px; /* Dimensione del titolo */
+     margin-bottom: 20px;
+     font-style: Italic;
+     text-align: center; /* Allineamento centrato */
+     
+  }
+ 
+   .info-text {
+     font-size: 22px; /* Dimensione del testo normale */
+     font-style: Italic; /* Font personalizzato */
+     color: #333; /* Colore del testo */
+     text-align: center; /* Allineamento centrato */
+     padding: 0 40px; /* Padding orizzontale */
+  }
+  .contact{
+      
+      padding: 20px 0;
+      margin-top: 20px; /* Margine superiore a 0 per essere attaccato alla mappa */
+      height: 50%;
+      margin-bottom: 30px; /* Margine inferiore negativo per evitare spazi vuoti */  
+   }
+
+   .contact-title {
+     font-weight: bold; /* Testo in grassetto */
+     font-size: 30px; /* Dimensione del titolo */
+     margin-bottom: 20px;
+     font-style: Italic;
+     text-align: center; /* Allineamento centrato */
+  }
+ 
+   .contact-text {
+     font-size: 22px; /* Dimensione del testo normale */
+     font-style: Italic; /* Font personalizzato */
+     color: #333; /* Colore del testo */
+     text-align: center; /* Allineamento centrato */
+     padding: 0 40px; /* Padding orizzontale */
+  }
+
+   .map {
+     margin-bottom: -200px; /* Margine inferiore negativo per eliminare lo spazio */
+}
+    
     
   </style>
 </head>
@@ -62,20 +103,39 @@
     </div>
   </section>
   
-  <section class="contact-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
-          <h1>Avete Domande? <br>Non esitate a conttatarci per avere informazioni<br></h1>
-          <p class="lead">contatto: info@As-NewReadings.com
-            <br>Recapito Telefonico
-            <br><img src="img/whatsapp.png"> +0813335566 <br>
-            <br>As-New Readings<br> Campania, Salerno
-          </p>
-        </div>
+
+  <section class="info">
+  <div class="container contact-center">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="info-title">La Nostra Storia</h2>
+        <p class="info-text">La passione per la lettura di due amici, che hanno messo insieme le forze
+        per creare un e-commerce, con l'obiettivo di ridare il giusto valore ai libri ed alla lettura, 
+        ormai quasi perso del tutto con l'avvento delle nuove tecnologie.</p>
+      </div>
+      <div class="col-md-12 text-center"> <!-- Aggiunto "text-center" per centrare il bottone -->
+        <a href="catalogo.jsp" class="btn btn-primary">Scopri i nostri Libri</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+               
+         <section class="contact">
+    <div class="container contact-center">
+    <h2 class="contact-title"> Avete Domande?</h2>
+    <p class="contact-text"> Non esitate a contattarci per avere informazioni. 
+    <br>Contatto: info@As-NewReadings.com
+     <br>Recapito Telefonico
+      <br><img src="img/whatsapp.png"> +0813335566 <br>
+       <br>As-New Readings<br> Campania, Salerno
+      </p>
+     </div>
+    </section>
+      
+  
+ 
+ 
+ 
 			
 		<footer>
     <div class="footer-container">

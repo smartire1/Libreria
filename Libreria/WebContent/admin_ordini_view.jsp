@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>root@AS-New Reading</title>
+    <title>root@AS-New Readings</title>
     <link rel="icon" type="image/png" href="img/ico.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- Aggiungi eventuali stili CSS o script JS necessari -->

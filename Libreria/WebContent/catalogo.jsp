@@ -11,7 +11,7 @@
     <link href="css/card.css" rel="stylesheet"> 
     <script src="js/addCart.js"></script>
     <link rel="icon" type="image/png" href="img/ico.png">
-	<title>AS-New Reading</title>
+	<title>AS-New Readings</title>
 </head>
 <body class="bgSand">
     <div class="bg-white">

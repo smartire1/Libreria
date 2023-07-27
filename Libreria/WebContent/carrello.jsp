@@ -10,7 +10,7 @@
     <link href="css/card.css" rel="stylesheet"> 
     <link href="css/style.css" rel="stylesheet"> 
     <link rel="icon" type="image/png" href="img/ico.png">
-    <title>AS-New Reading</title>
+    <title>AS-New Readings</title>
 </head>
 <body class="bgSand">
     <div class="bg-white">
