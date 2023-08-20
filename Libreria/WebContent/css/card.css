@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 .demo{
-padding: 25px 0;
+padding: 25px 10px;
 }
 .heading-title{
 	margin-bottom: 100px;
@@ -15,6 +15,38 @@ padding: 25px 0;
     border: 1px solid;
     box-shadow: 2px 8px 8px #1d1d1d;
     margin-bottom: 10px;
+}
+
+.filterTable{
+	border-radius: 10px;
+	margin-top: 20px;
+    background: #eef0f2;
+    border-top: 3px solid #eef0f3;
+    padding: 0px;
+    transition: all 340ms ease 0s;
+    border: 1px solid;
+    box-shadow: 2px 8px 8px #1d1d1d;
+    margin-bottom: 0px;
+    
+}
+
+.filterTable p{
+	letter-spacing: 2px;
+    font-size: 15px;
+    font-style: italic;
+    color: #8b909d;
+    line-height: 26px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+#void{
+	text-align: center;
+	font-size: 35px;
+    color: #ffffff;
+    line-height: 26px;
+    padding-left: 20px;
+    display: inline-block;
 }
 
 #table-bg {

@@ -2,7 +2,11 @@
 
 html, body {
 	height: 100%;
-	width: 100%;
+	width: 100% ;
+}
+
+h3 {
+	color: white;
 }
 
 .btn {
@@ -139,10 +143,45 @@ input[type="range"] {
     height: 250px;
 }
 
+.fixed-container {
+  position: fixed;
+  top: 23%;
+  left: 8%;
+  width: 20%;
+  height:45%;
+  z-index: 1000; /* Assicurati che l'elemento sia sopra gli altri contenuti */
+  /* Aggiungi altre proprietà CSS come padding, box-shadow, ecc. se necessario */
+}
+
+.fixed-container-void {
+  position: relative;
+
+  /* Aggiungi altre proprietà CSS come padding, box-shadow, ecc. se necessario */
+}
+
 #verticalSeparator {
   border-left: 1px solid #c0c0c0;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+@media (max-width: 991px) { /* Cambia a una larghezza diversa se necessario */
+    .fixed-container {
+        position: static; /* Cambia la posizione da fixed a static */
+        height: 85%;
+        width: 75%;
+        transition: all 340ms ease 0s;
+        /* Altre regole CSS per quando la posizione è static */
+    }
+}
+
+@media (max-height: 900px) and (min-width: 992px) { /* Cambia a una larghezza diversa se necessario */
+    .fixed-container {
+        position: static; /* Cambia la posizione da fixed a static */
+        height: 37%;
+        width: 75%;
+        /* Altre regole CSS per quando la posizione è static */
+    }
 }
 
 @media (max-width: 767px) {

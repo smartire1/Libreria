@@ -12,6 +12,13 @@
     <script src="js/addCart.js"></script>
     <link rel="icon" type="image/png" href="img/ico.png">
 	<title>AS-New Reading</title>
+	
+    <script>
+    	function voidCartMessage() {
+    		document.getElementById("table-bg").style.height = "40%"; 	
+    		}
+    </script>
+	
 </head>
 <body class="bgSand">
     <div class="bg-white">
@@ -72,29 +79,50 @@
         </div>
     </form>
 
-    <div class="pricingTable" id="table-bg">
+	<% if (null != request.getAttribute("Fisbn") || null != request.getAttribute("FcasaEditrice") || null != request.getAttribute("Fmaxprice")) { %>
+	    <div class="container text-center filterTable">
+
+	            <div class="col-md-12">
+	                <p style="color: red;">Ricerca per:</p>
+	                <p><span style="color: black;">ISBN</span> - "<%= ("" == request.getAttribute("Fisbn").toString()) ? "Tutti" : request.getAttribute("Fisbn").toString() %>"</p>
+	                <p><span style="color: black;">Casa Editrice</span> - "<%= ("" == request.getAttribute("FcasaEditrice").toString()) ? "Tutte" : request.getAttribute("FcasaEditrice").toString() %>"</p>
+	                <p><span style="color: black;">Prezzo max</span> - "<%= ("" == request.getAttribute("Fmaxprice").toString()) ? "Max" : request.getAttribute("Fmaxprice").toString() %>"</p>
+	            </div>
+	       
+	    </div>
+	<% } %>
+
+
+    <div class="container pricingTable" id="table-bg">
         <div class="row ">
-            <% while(res.next()){%>	
-            <div class="col-lg-4 d-flex justify-content-center" style="margin-top: 60px; ">
-                <div class="card pricingTable" >
-                    <h3 class="title" ><%= res.getString("titolo") %> </h3>
-                    <span><img src="<%= res.getString("img") %>" class="card-img-top"></span>
-                    <br>
-                    <div class="card-body">
-                        <hr/><p><strong>ISBN: </strong><%= res.getString("isbn") %>  <input id="isbn" name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></p>
-                        <p><strong>casa editrice:  </strong><%= res.getString("casaEditrice") %></p>
-                        <p><strong>prezzo: </strong> <%= res.getString("prezzo") %> euro</p><hr/>
-
-                        <% if( session.getAttribute("email") != null && !session.getAttribute("email").equals("") ) { %>
-                            <button type="button" class="btn btn-danger" onclick="addToCart('<%= res.getString("isbn") %>', '<%= session.getAttribute("email") %>')">Aggiungi al carrello</button>
-                        <% } else { %>
-                            <button type="button" class="btn btn-danger" onclick="alert('E\' necessario loggarsi!');">Aggiungi al carrello</button>
-                        <% } %>
-
-                    </div>
-                </div>		      
-            </div>
-            <% } %>
+	        <% if (res.next()) { %>
+	            <% do {%>	
+	            <div class="col-lg-4 d-flex justify-content-center" style="margin-top: 60px; ">
+	                <div class="card pricingTable" >
+	                    <h3 class="title" ><%= res.getString("titolo") %> </h3>
+	                    <span><img src="<%= res.getString("img") %>" class="card-img-top"></span>
+	                    <br>
+	                    <div class="card-body">
+	                        <hr/><p><strong>ISBN: </strong><%= res.getString("isbn") %>  <input id="isbn" name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></p>
+	                        <p><strong>casa editrice:  </strong><%= res.getString("casaEditrice") %></p>
+	                        <p><strong>prezzo: </strong> <%= res.getString("prezzo") %> &#8364</p><hr/>
+	
+	                        <% if( session.getAttribute("email") != null && !session.getAttribute("email").equals("") ) { %>
+	                            <button type="button" class="btn btn-danger" onclick="addToCart('<%= res.getString("isbn") %>', '<%= session.getAttribute("email") %>')">Aggiungi al carrello</button>
+	                        <% } else { %>
+	                            <button type="button" class="btn btn-danger" onclick="alert('E\' necessario loggarsi!');">Aggiungi al carrello</button>
+	                        <% } %>
+	
+	                    </div>
+	                </div>		      
+	            </div>
+	            <%} while(res.next()); %>
+	        <% } else { %>
+				<script>
+					voidCartMessage();
+				</script>
+				<p id="void">Nessun prodotto trovato</p>  	        	
+	        <%} %>
         </div>
     </div>      
     <br>
