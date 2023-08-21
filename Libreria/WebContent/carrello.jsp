@@ -25,6 +25,7 @@
     		}
     </script>
     
+    <title>AS-New Readings</title>
 </head>
 <body class="bgSand">
     <div class="bg-white">

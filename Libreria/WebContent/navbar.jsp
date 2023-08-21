@@ -14,7 +14,7 @@
           <a class="nav-link" href="catalogo.jsp">I Nostri Libri</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contatti.jsp">Contatti</a>
+          <a class="nav-link" href="contatti.jsp">Chi Siamo</a>
         </li>
         <li class="nav-item " id="cart"> 
           <% if( session.getAttribute("nome") == null || session.getAttribute("nome").equals("") ) { %>
