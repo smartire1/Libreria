@@ -19,14 +19,15 @@ public class CartDAO {
     }
 
     public void createCart(CartItem cart) throws SQLException {
-        String query = "INSERT INTO Cart (isbn , titolo, prezzo, casaEditrice, img, Customer) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Cart (isbn , titolo, prezzo, casaEditrice, img, Customer, Quantity) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
         	statement.setString(1, cart.getIsbn());
             statement.setString(2, cart.getTitolo());
             statement.setDouble(3, cart.getPrezzo());
-            statement.setString(4, cart.getCasaEditrice());
+            statement.setString(4, cart.getCasaEditrice());                        
             statement.setString(5, cart.getImg());
             statement.setString(6, cart.getCustomer());
+            statement.setInt(7, cart.getQuantita());
             statement.executeUpdate();
         }
     }
@@ -44,7 +45,8 @@ public class CartDAO {
                     String casa = resultSet.getString("casaEditrice");
                     String img = resultSet.getString("img");
                     String Customer = resultSet.getString("Customer");
-                    CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img, Customer);
+                    int quantita = resultSet.getInt("Quantity");
+                    CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img, Customer, quantita);
                     return cart;
                 }
             }
@@ -64,7 +66,8 @@ public class CartDAO {
                 String casa = resultSet.getString("casaEditrice");
                 String img = resultSet.getString("img");
                 String Customer = resultSet.getString("Customer");
-                CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img,  Customer);
+                int quantita = resultSet.getInt("Quantity");
+                CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img,  Customer, quantita);
                 carts.add(cart);
             }
         }
@@ -84,7 +87,8 @@ public class CartDAO {
 	                String casa = resultSet.getString("casaEditrice");
 	                String img = resultSet.getString("img");
 	                String Customer = resultSet.getString("Customer");
-	                CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img, Customer);
+	                int quantita = resultSet.getInt("Quantity");
+	                CartItem cart = new CartItem(isbn, titolo, prezzo, casa, img, Customer, quantita);
 	                carts.add(cart);
 	            }
         	 }
@@ -93,13 +97,24 @@ public class CartDAO {
     }
 
     public void updateCart(CartItem cart) throws SQLException {
-        String query = "UPDATE Cart SET isbn = ?, titolo = ?, prezzo = ?, casaEditrice = ? WHERE Customer = ?";
+        String query = "UPDATE Cart SET isbn = ?, titolo = ?, prezzo = ?, casaEditrice = ?, Quantity = ? WHERE Customer = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
         	statement.setString(1, cart.getIsbn());
             statement.setString(2, cart.getTitolo());
             statement.setDouble(3, cart.getPrezzo());
             statement.setString(4, cart.getCasaEditrice());
-            statement.setString(5, cart.getCustomer());
+            statement.setInt(5, cart.getQuantita());
+            statement.setString(6, cart.getCustomer());
+            statement.executeUpdate();
+        }
+    }
+    
+    public void updateCartQuantita(CartItem cart) throws SQLException {
+        String query = "UPDATE Cart SET Quantity = ? WHERE Customer = ? AND isbn = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        	statement.setInt(1, cart.getQuantita());
+        	statement.setString(2, cart.getCustomer());
+        	statement.setString(3, cart.getIsbn());
             statement.executeUpdate();
         }
     }

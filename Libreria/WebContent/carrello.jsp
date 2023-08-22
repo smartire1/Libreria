@@ -66,7 +66,7 @@
 	<div class="container">
 	  <div class="row">
 	    <div class="col-lg-4 col-md-12 col-sm-12">
-			<div class="pricingTable fixed-container" id="fixedDiv">
+			<div class="container pricingTable fixed-container" id="fixedDiv">
 			    <div class="logo-container">
 			        <img src="img/as.png" alt="Logo" id="fixedLogo">
 			    </div>
@@ -79,11 +79,11 @@
 			        </div>
 			    </div>
 			    <hr>
-			    <div class="text-center">
+			    <div class="card-body text-center">
 			        <p>Visualizza ordini</p>
-			        <form action="UserOrdini" method="post">
-			            <button type="submit" class="btn btn-danger">Ordini</button>
-			        </form>
+				        <form action="UserOrdini" method="post">
+				            <button class="btn btn-danger">Ordini</button>
+				        </form>
 			    </div>
 			</div>
 
@@ -91,7 +91,8 @@
 	    <div class="col-lg-8 col-md-12 col-sm-12" id="image-bg">
 		        <div class="row row-cols-1">
 		            <% if (res.next()) {
-		                 do { totale+=Double.parseDouble(res.getString("prezzo"));%>  
+		                 do { 
+		                	 for(int i=0;i < res.getInt("Quantity"); i++)	totale+=Double.parseDouble(res.getString("prezzo"));%>  		                	 
 		                    <div class="col d-flex justify-content-center">
 		                        <div class="pricingTable">                 
 									<div class="container text-center">
@@ -106,16 +107,17 @@
 									    <div id="verticalSeparator" class="col d-flex justify-content-center align-items-center">
 				                            <div class="card-body">
 				                                <form action="RimuoviCarrello" method="post">
-				                                	
 				                                    <ul class="pricing-content">
 				                                        <hr/>
 				                                        <li><strong>isbn:</strong>  <%= res.getString("isbn") %> <input name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></li>
 				                                        <li><strong>prezzo:</strong> <%= res.getString("prezzo") %> &#8364</li>
 				                                        <li><strong>casaEditrice:</strong> <%= res.getString("casaEditrice") %></li>
 				                                        <hr/>
+				                                        <li>Quantità: <strong><%= res.getInt("Quantity") %></strong></li>	
 				                                    </ul>
 				                                    <div class="container">
-				                                        <Button type="submit" class="btn btn-danger">Rimuovi</Button>
+									                    				                                    
+				                                        <Button type="submit" class="btn btn-danger">Rimuovi</Button>				                                        			                                        
 				                                    </div>
 				                                </form>
 				                            </div>

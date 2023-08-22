@@ -1,6 +1,7 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="img/ico.png">
@@ -114,7 +115,7 @@
         ormai quasi perso del tutto con l'avvento delle nuove tecnologie.</p>
       </div>
       <div class="col-md-12 text-center"> <!-- Aggiunto "text-center" per centrare il bottone -->
-        <a href="catalogo.jsp" class="btn btn-primary">Scopri i nostri Libri</a>
+        <a href="catalogo.jsp" class="btn btn-danger">Scopri i nostri Libri</a>
       </div>
     </div>
   </div>

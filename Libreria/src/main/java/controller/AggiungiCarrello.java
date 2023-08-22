@@ -14,6 +14,7 @@ import dao.CartDAO;
 import dao.ProductsDAO;
 import model.CartItem;
 import model.Products;
+import java.util.List;
 
 @WebServlet(
 		  name = "AggiungiCarrello", value = "/AggiungiCarrello")
@@ -45,7 +46,19 @@ public class AggiungiCarrello extends HttpServlet{
 			toAdd = productsDAO.getProductByIsbn(isbn);
 			
 			CartDAO CartDAO = new CartDAO(connessione);
-			CartDAO.createCart(new CartItem(toAdd.getIsbn(), toAdd.getTitolo(), toAdd.getPrezzo(), toAdd.getCasaEditrice(), toAdd.getImg(), email));
+			
+			List<CartItem> control =  CartDAO.getAllCartsByCustomer(email);
+			
+			int quantita = 0;		
+			for(CartItem c: control) {
+				if(c.getIsbn().compareTo(isbn)==0) quantita = c.getQuantita();
+			}
+			if(quantita==0) {
+				CartDAO.createCart(new CartItem(toAdd.getIsbn(), toAdd.getTitolo(), toAdd.getPrezzo(), toAdd.getCasaEditrice(), toAdd.getImg(), email, 1));
+			}
+			else  {
+				CartDAO.updateCartQuantita(new CartItem(toAdd.getIsbn(), toAdd.getTitolo(), toAdd.getPrezzo(), toAdd.getCasaEditrice(), toAdd.getImg(), email, quantita+1));
+			}
 			
 //			request.getRequestDispatcher("/catalogo.jsp").forward(request, response);	unused(gestione della richiesta asincrona)
 			return;

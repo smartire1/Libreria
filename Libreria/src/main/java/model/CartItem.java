@@ -7,14 +7,7 @@ public class CartItem {
     private String casaEditrice;
     private String customer;
     private String img;
-
-    public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
-	}
+    private Integer quantita;
 
 	public CartItem(String isbn, String titolo, Double prezzo, String casaEditrice, String img, String customer) {
     	this.isbn = isbn;
@@ -31,6 +24,16 @@ public class CartItem {
         this.prezzo = prezzo;
         this.casaEditrice = casaEditrice;
         this.customer = customer;
+    }
+	
+	public CartItem(String isbn, String titolo, Double prezzo, String casaEditrice, String img, String customer, int quantita) {
+    	this.isbn = isbn;
+        this.titolo = titolo;
+        this.prezzo = prezzo;
+        this.casaEditrice = casaEditrice;
+        this.img = img;
+        this.customer = customer;
+        this.quantita = quantita;
     }
 
     public String getCustomer() {
@@ -71,6 +74,22 @@ public class CartItem {
 
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
+	}
+
+	public int getQuantita() {
+		return quantita;
+	}
+
+	public void setQuantita(int quantita) {
+		this.quantita = quantita;
+	}
+	
+    public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 }
