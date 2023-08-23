@@ -13,71 +13,64 @@
     <link rel="icon" type="image/png" href="img/ico.png">
     <title>AS-New Readings</title>
 </head>
-<body>
+<body class="bgSand">
+ <div class="bg-white">
     <div class="logo-container">
         <a href="index.jsp">
             <img src="img/as.png" alt="Logo">
         </a>
     </div>
-  
+  	</div>
     <jsp:include page="navbar.jsp" />
   
     <br>
     <br>
   
-    <div class="container-sm" style="max-width: 200px;">
-        <p class="border border-danger p-3 lead text-center">Ordini effettuati:</p>
+    <div class="container text-center">
+        <h2 class="info-title">Ordini Effettuati</h2>
     </div>
-    <div class="container">
-        <% 
-            HashMap<Integer, List<OrderItem>> mappa = (HashMap<Integer, List<OrderItem>>) request.getAttribute("HashMap");
-            if (!mappa.isEmpty()) { 
-        %>
-        <div class="container demobg">
-            <div class="row">
-                <% 
+    <div class="container pricingTable" id="table-bg">
+        <div class="row">
+            <% 
+                HashMap<Integer, List<OrderItem>> mappa = (HashMap<Integer, List<OrderItem>>) request.getAttribute("HashMap");
+                if (!mappa.isEmpty()) { 
                     for (Map.Entry<Integer, List<OrderItem>> entry : mappa.entrySet()) { 
-                %>
-                <div class="col-md-4 col-sm-4 border border-success">
-                    <div class="pricingTable">
-                        <br>
-                        <h3 class="numero_ordine">Numero ordine: <%= entry.getKey() %> </h3>
-                        <span class="subtitle"></span>
-                        <% 
-                            for (OrderItem o : entry.getValue()) { 
-                        %>
-                        <div class="col-md col-sm border border-danger">
-                            <div class="pricingTable">
-                                <br>
-                                <h3 class="title"><%= o.getTitolo() %></h3>
-                                <span class="subtitle"></span>
-                                <ul class="pricing-content">
-                                    <li><strong>isbn:</strong> <%= o.getIsbn() %></li>
-                                    <li><strong>titolo:</strong> <%= o.getTitolo() %></li>
-                                    <li><strong>prezzo:</strong> &#8364 <%= o.getPrezzo() %></li>
-                                    <li><strong>casaEditrice:</strong> <%= o.getCasaEditrice() %></li>
-                                </ul>
-                            </div>
+            %>
+            <div class="col-lg-4 col-md-6 mb-4"> 
+                <div class="pircingTable">
+                    <h3 class="numero_ordine">Numero ordine: <%= entry.getKey() %> </h3>
+                    <% 
+                        for (OrderItem o : entry.getValue()) { 
+                    %>
+                    <div class="col-md col-sm">
+                        <div class="pricingTable">
+                            <h3 class="title"><%= o.getTitolo() %></h3>
+                            <ul class="pricing-content">
+                                <li><strong>isbn:</strong> <%= o.getIsbn() %></li>
+                                <li><strong>titolo:</strong> <%= o.getTitolo() %></li>
+                                <li><strong>prezzo:</strong> &#8364 <%= o.getPrezzo() %></li>
+                                <li><strong>casaEditrice:</strong> <%= o.getCasaEditrice() %></li>
+                            </ul>
                         </div>
-                        <% 
-                            } 
-                        %>
                     </div>
+                    <% 
+                        } 
+                    %>
                 </div>
-                <% 
-                    } 
-                %>
             </div>
+            <% 
+                    } 
+                } else { 
+            %>
+            <div class="col-12">
+                <p class="lead text-center"> Nessun ordine effettuato</p>
+            </div>
+            <% 
+                } 
+            %>
         </div>
-        <% 
-            } else if (mappa.isEmpty()) { 
-        %>
-        <p class="lead text-center"> Nessun ordine effettuato</p>
-        <% 
-            } 
-        %>
     </div>
-  
+
     <footer>
         <div class="footer-container">
             <div class="container">
@@ -106,6 +99,8 @@
             </div>
         </div>
     </footer>
+    
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>  
