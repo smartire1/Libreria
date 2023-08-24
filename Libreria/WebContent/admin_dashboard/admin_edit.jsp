@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col-sm-12 text-center">
             <form>
-              <a href="index_admin.jsp"><img class="logo logo-dark" alt="Logo" src="images/eer.png" style="width: 80px; height: 60px;"></a>
+              <a href="../index_admin.jsp"><img class="logo logo-dark" alt="Logo" src="images/eer.png" style="width: 80px; height: 60px;"></a>
             </form>
             <p class="lead">Accesso eseguito come Admin:</p>
             <p class="lead"> Admin -> <%=session.getAttribute("nome") %></p>

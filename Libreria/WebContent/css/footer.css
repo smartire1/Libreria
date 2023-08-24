@@ -1,10 +1,25 @@
 @charset "ISO-8859-1";
 
+    .footer {
+      font-size: 12px;
+      border-top: 2px inset;
+      height: 50px;
+    }
+    
+	.footer .copyright {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	}
+
     .footer-container {
-      min-height: 175%;
-      background-color: #461F0A;
-      padding: 75px;
-      color: white;
+      height: 100%;
+      min-height: 100%;
+      background-color: rgb(255, 255, 255);
+      padding: 30px;
+      color: rgb(0, 0, 0);
+      border-top: 2px inset
     }
     .social-icons {
       list-style-type: none;
@@ -17,11 +32,14 @@
       margin-right: 30px;
     }
     .social-icons a {
-      color: white;
+      color: rgb(0, 0, 0);
       display: inline-block;
     }
     .footer-container p {
-     font-size: 30px;
+     font-size: 30px; /* Dimensione del titolo */
+     margin-bottom: 20px;
+     font-style: Italic;
+     text-align: center; /* Allineamento centrato */
     }
   
 	.product-text {

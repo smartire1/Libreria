@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="java.sql.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="java.sql.*" import="java.text.DecimalFormat" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,6 +55,7 @@
       statement.setString(1, session.getAttribute("email").toString());
       ResultSet res = statement.executeQuery();
       Double totale=0.0;
+      String totaleFormattato = "";
       
       /*    Statement cmd = connessione.createStatement();
       String query = "select * from Cart";
@@ -91,6 +92,8 @@
 	    <div class="col-lg-8 col-md-12 col-sm-12" id="image-bg">
 		        <div class="row row-cols-1">
 		            <% if (res.next()) {
+		            	DecimalFormat decimalFormat = new DecimalFormat("#.##");
+		            	
 		                 do { 
 		                	 for(int i=0;i < res.getInt("Quantity"); i++)	totale+=Double.parseDouble(res.getString("prezzo"));%>  		                	 
 		                    <div class="col d-flex justify-content-center">
@@ -127,11 +130,21 @@
 		                        </div>
 		                    </div> 
 		              <% } while(res.next());
+		                 totaleFormattato = decimalFormat.format(totale);
 		            } else { %>
 						<script>
 							voidCartMessage();
-						</script>            
-		                <h3 class="text-center">Il carrello è vuoto...</h3>
+						</script>
+						<br>
+						<br>            
+						<div class="container">
+			                <h4 class="text-center lead">Il tuo carrello al momento è vuoto...</h4>
+			                <br>
+			                <div class="container text-center">
+			                	<a href="catalogo.jsp" class="btn btn-danger">Continua gli acquisti</a> 
+			                </div>
+		                </div>
+		                
 		            <% } %>  
 		                    
 		            <br>
@@ -183,7 +196,7 @@
     </footer>
     
     <script>
-    	document.getElementById("tot").innerHTML = "Totale: <span style='color: black;'><%= totale %> &#8364</span>";
+    	document.getElementById("tot").innerHTML = "Totale: <span style='color: black;'><%= totaleFormattato %> &#8364</span>";
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

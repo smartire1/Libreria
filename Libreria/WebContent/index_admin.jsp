@@ -7,72 +7,50 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="icon" type="image/png" href="img/index.ico">
-    <link href="css/style.css" rel="stylesheet"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Admin Dashboard</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!-- CSS Files -->
-    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="dashboard/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/footer.css" rel="stylesheet">
+	<title>Admin Dashboard</title>
 
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="sidebar bgSand" data-color="azure" data-image="dashboard/img/sidebar.png">
-
-            <div class="sidebar-wrapper">
-                <div class="logo-container">
-                    <a href="index_admin.jsp" class="simple-text">
-                        <img src="img/as.png">
-                    </a>
-                </div>
-                <ul class="nav">
-                    <li  class="nav-item active">
-                        <a class="nav-link" href="index_admin.jsp">
-                            <p>Admin</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="admin_dashboard/admin_prodotti.jsp">
-                            <p>Prodotti</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="admin_dashboard/admin_utenti.jsp">
-                            <p>Utenti</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="main-panel">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
-                <div class=" container-fluid  ">
-                    <a class="navbar-brand" href="#Dashboard"> Dashboard </a>
-                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#User">
-                                    <span class="no-icon"> <%if(session.getAttribute("nome")==null) {}%><%=session.getAttribute("nome") %> </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                            <form action="Logout" method="post" name="log-out">                         
-                                <a href="javascript:void(0)" class="nav-link" onclick="document.forms['log-out'].submit()">
-                                    <span class="no-icon">Log out</span>
-                                </a></form></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-                                
+	<div class="logo-container">
+		<a href="index_admin.jsp">
+			<img src="img/as.png" alt="Logo">
+		</a>
+		<p>Logged as Admin</p>
+	</div>
+	
+	<jsp:include page="navbar.jsp" />
+	
+	<div class="text-center image-bg">
+		<button style="margin-top:50px;" id="OP" class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Menu Operazioni</button>
+	
+			<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+			  <div class="offcanvas-header">
+			    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Operazioni</h5>
+			    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			  </div>
+			  <div class="offcanvas-body small">
+				<div class="container text-center">
+				  <div class="row">
+				    <div class="col">
+				      <a href="admin_dashboard/admin_prodotti.jsp" class="btn btn-danger">Visualizza prodotti</a>
+				    </div>
+				    <div class="col">
+				      <a href="admin_dashboard/admin_utenti.jsp" class="btn btn-danger">Visualizza utenti</a>
+				    </div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+	</div>
+	
             <footer class="footer">
                 <div class="container">
                     <nav>
@@ -86,8 +64,9 @@
                     </nav>
                 </div>
             </footer>
-        </div>
-    </div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

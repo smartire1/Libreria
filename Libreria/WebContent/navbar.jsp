@@ -7,9 +7,16 @@
     </button>
     <div class="collapse navbar-collapse justify-content-center flex-grow-1" id="navbarNav">
       <ul class="navbar-nav ml-auto align-items-center">
+      <%if(session.getAttribute("admin") == null) {%>
         <li class="nav-item">
           <a class="nav-link" href="index.jsp">Home</a>
         </li>
+        <%} else { %> 
+        <li class="nav-item">
+          <a class="nav-link" href="index_admin.jsp">Home</a>
+        </li>    
+        <%} %>      
+        <%if(session.getAttribute("admin") == null) {%>
         <li class="nav-item">
           <a class="nav-link" href="catalogo.jsp">I Nostri Libri</a>
         </li>
@@ -31,7 +38,7 @@
 	            <img src="img/Cart.png" alt="Carrello">
 	          </span>
 	        </a>
-	      <% } %>
+	      <% } }%>
         </li>        
         <li class="nav-item" id="access">
           <% if( session.getAttribute("nome") == null || session.getAttribute("nome").equals("") ) { %>

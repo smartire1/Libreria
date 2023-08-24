@@ -51,6 +51,7 @@ public class Login extends HttpServlet {
 					session.setAttribute("nome", c.getNome());
 					session.setAttribute("cognome", c.getCognome());
 					session.setAttribute("email", email);
+					session.setAttribute("admin", true);
 					request.getRequestDispatcher("/index_admin.jsp").forward(request, response);
 					return;
 				}

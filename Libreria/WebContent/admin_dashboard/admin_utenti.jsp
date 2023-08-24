@@ -62,7 +62,7 @@
                         <td><%= c.getCognome() %></td>
                         <td><%= c.getEmail() %></td>
                         <td>
-                            <form action="UserOrdini" method="post">
+                            <form action="../UserOrdini" method="post">
                                 <input type="hidden" name="email" value="<%= c.getEmail() %>">
                                 <button type="submit" class="btn btn-outline-danger">Visualizza ordini</button>
                             </form>

@@ -19,6 +19,23 @@ h3 {
     min-width: 155px;
 }
 
+#OP {
+    border-width: 2px;
+    color: brown;
+    background-color: white;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    min-width: 155px;
+}
+
+#OP:hover {
+    background: none;
+    color: #fff;
+    border-color: #ca293e;
+    background-color: #ca293e;
+}
+
 .btn:hover {
     background: none;
     color: #fff;
@@ -32,16 +49,17 @@ h3 {
 }
 
 .image-bg {
-    background-image: url('../img/LibreriaAntica.png');
+    background-image: url('../img/adminWalpaper.png');
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 65%;
     position: relative;
+    border-top: 2px inset
 }
 
 .image-login {
-    background-image: url('../img/LibreriaLogin.png');
+    background-image: url('../img/LibreriaAntica.png');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -104,27 +122,25 @@ input[type="range"] {
 
 
 
-#index-carousel {
-    width: 100%;
+#carouselExampleIndicators {
+    width: auto;
     height: 100%;
     position: relative;
     overflow: hidden;
 }
 
-#index-carousel .carousel-inner {
+#carouselExampleIndicators .carousel-inner {
     width: 100%;
     height: 100%;
 }
 
-#index-carousel .carousel-item {
+#carouselExampleIndicators .carousel-item {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 #index-carousel .carousel-control-prev,
@@ -166,8 +182,8 @@ input[type="range"] {
       background-color: #f0f0f0; /* Sfondo di un altro colore */
       padding: 50px 0;
       margin-top: 0px; /* Margine superiore a 0 per essere attaccato alla mappa */
-      height: 45%;
-      margin-bottom: 0px; /* Margine inferiore negativo per evitare spazi vuoti */  
+      height: 50%;
+      margin-bottom: 50px; /* Margine inferiore negativo per evitare spazi vuoti */  
    }
 
    .info-title {
@@ -191,7 +207,7 @@ input[type="range"] {
       padding: 20px 0;
       margin-top: 20px; /* Margine superiore a 0 per essere attaccato alla mappa */
       height: 40%;
-      margin-bottom: 30px; /* Margine inferiore negativo per evitare spazi vuoti */  
+      margin-bottom: 100px; /* Margine inferiore negativo per evitare spazi vuoti */  
    }
 
    .contact-title {
