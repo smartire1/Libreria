@@ -100,6 +100,37 @@ h3 {
     height: 130px;
 }
 
+.logo-container-void {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.logo-container-void img{
+    width: 250px; 
+    height: 250px;
+    opacity: 0.6;
+}
+
+.logo-container-admin {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.logo-container-admin img{
+    width: 190px; 
+    height: 190px;
+    opacity: 0.6;
+}
+
+.offcanvas-body p{
+	 font-size: 30px; /* Dimensione del titolo */
+     margin-bottom: 20px;
+     font-style: Italic;
+     text-align: center; /* Allineamento centrato */
+}
+
 .col-sm-12  {
     margin-top:10px;
 }
@@ -234,7 +265,7 @@ input[type="range"] {
   position: fixed;
   top: 23%;
   left: 8%;
-  width: auto;
+  width: 20%;
   height:45%;
   z-index: 1000; /* Assicurati che l'elemento sia sopra gli altri contenuti */
   /* Aggiungi altre proprietà CSS come padding, box-shadow, ecc. se necessario */

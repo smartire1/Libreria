@@ -25,10 +25,14 @@
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/sfondo2.png" class="d-block w-100" alt="First Image">
+    	<a href="catalogo.jsp"> 
+      		<img src="img/sfondo2.png" class="d-block w-100" alt="First Image">
+    	</a>
     </div>
     <div class="carousel-item">
-      <img src="img/sfondo1.png" class="d-block w-100" alt="Second Image">
+    	<a href="catalogo.jsp"> 
+      		<img src="img/sfondo1.png" class="d-block w-100" alt="Second Image">
+      	</a>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
