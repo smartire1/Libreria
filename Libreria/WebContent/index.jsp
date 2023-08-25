@@ -26,12 +26,22 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
     	<a href="catalogo.jsp"> 
-      		<img src="img/sfondo2.png" class="d-block w-100" alt="First Image">
+      		<img src="img/sfondo1.png" class="d-block w-100" alt="First Image">
     	</a>
     </div>
     <div class="carousel-item">
     	<a href="catalogo.jsp"> 
-      		<img src="img/sfondo1.png" class="d-block w-100" alt="Second Image">
+      		<img src="img/sfondo2.png" class="d-block w-100" alt="Second Image">
+      	</a>
+    </div>
+    <div class="carousel-item">
+    	<a href="catalogo.jsp"> 
+      		<img src="img/sfondo3.png" class="d-block w-100" alt="Second Image">
+      	</a>
+    </div>
+    <div class="carousel-item">
+    	<a href="catalogo.jsp"> 
+      		<img src="img/sfondo4.png" class="d-block w-100" alt="Second Image">
       	</a>
     </div>
   </div>
