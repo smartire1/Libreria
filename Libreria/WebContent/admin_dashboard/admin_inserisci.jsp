@@ -51,11 +51,10 @@
 	<div class="demo">
 		<div class="container demobg">
 			<div class="row justify-content-center">
-				<div class="col-md-4 col-sm-6 border border-danger">
-					<div class="pricingTable">
+				<div class="col-md-4 col-sm-6">
+					<div class="">
 						<br>
 						<h3 class="title">Inserimento nuovo prodotto</h3>
-						<span class="subtitle"></span>
 						<form action="OpzioniCatalogo" method="post" onSubmit="submitForm()">
 							<ul class="pricing-content">
 								<li class="form-group">

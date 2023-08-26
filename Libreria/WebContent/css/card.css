@@ -5,6 +5,15 @@ padding: 25px 10px;
 .heading-title{
 	margin-bottom: 100px;
 }
+
+.pricingTableBack{
+	background-color: rgba(0, 0, 0, 0); 
+	margin-top: 2%;
+    padding: 0px 85px;
+    transition: all 340ms ease 0s;    
+    margin-bottom: 10px;
+}
+
 .pricingTable{
 	border-radius: 28px;
 	margin-top: 2%;
@@ -22,11 +31,10 @@ padding: 25px 10px;
 	margin-top: 20px;
     background: #eef0f2;
     border-top: 3px solid #eef0f3;
-    padding: 0px;
+    margin: 0px 85px;
     transition: all 340ms ease 0s;
     border: 1px solid;
     box-shadow: 2px 8px 8px #1d1d1d;
-    margin-bottom: 0px;
     
 }
 
@@ -50,9 +58,10 @@ padding: 25px 10px;
 }
 
 #table-bg {
-	background-image: url('../img/cat.png'); 
+	 
 	border-radius:15px; 
 	background-position: center;
+	margin-bottom: 30px;
 }
 
 .pricingTable .title{
@@ -98,7 +107,7 @@ padding: 25px 10px;
     padding: 0;
     margin: 0 0 30px 0;
     list-style: none;
-    align: center;
+    align-items: center;
 }
 .pricingTable .pricing-content li{
     font-size: 15px;

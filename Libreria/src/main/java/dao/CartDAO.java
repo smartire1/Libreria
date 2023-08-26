@@ -97,14 +97,12 @@ public class CartDAO {
     }
 
     public void updateCart(CartItem cart) throws SQLException {
-        String query = "UPDATE Cart SET isbn = ?, titolo = ?, prezzo = ?, casaEditrice = ?, Quantity = ? WHERE Customer = ?";
+        String query = "UPDATE Cart SET titolo = ?, prezzo = ?, casaEditrice = ? WHERE isbn = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-        	statement.setString(1, cart.getIsbn());
-            statement.setString(2, cart.getTitolo());
-            statement.setDouble(3, cart.getPrezzo());
-            statement.setString(4, cart.getCasaEditrice());
-            statement.setInt(5, cart.getQuantita());
-            statement.setString(6, cart.getCustomer());
+            statement.setString(1, cart.getTitolo());
+            statement.setDouble(2, cart.getPrezzo());
+            statement.setString(3, cart.getCasaEditrice());
+            statement.setString(4, cart.getIsbn());
             statement.executeUpdate();
         }
     }

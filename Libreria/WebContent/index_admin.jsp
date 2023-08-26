@@ -15,7 +15,7 @@
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/footer.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/ico.png">
-	<title>Admin Dashboard</title>
+	<title>root@AS-New Readings</title>
 </head>
 
 <body>

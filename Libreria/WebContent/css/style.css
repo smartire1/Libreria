@@ -1,12 +1,14 @@
 @charset "ISO-8859-1";
 
 html, body {
-	height: 100%;
-	width: 100% ;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 h3 {
-	color: white;
+    color: white;
 }
 
 .btn {
@@ -55,7 +57,7 @@ h3 {
     width: 100%;
     height: 65%;
     position: relative;
-    border-top: 2px inset
+    border-top: 2px inset;
 }
 
 .image-login {
@@ -64,29 +66,29 @@ h3 {
     background-position: center;
     width: 100%;
     height: 65%;
-    position: relative; 
-    border-top: 2px inset
+    position: relative;
+    border-top: 2px inset;
 }
 
 #loginBox {
-	background-color: white;
-	border: 1px solid; 
-	padding: 10px; 
-	border-radius: 5px; 
-	height: 300px; 
-	width: 300px; 
-	position: absolute; 
-	top: 50%; 
-	left: 50%; 
-	transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-#loginBox p strong{
-	font-weight: bold;
+#loginBox p strong {
+    font-weight: bold;
 }
 
 #loginBox p {
-	font-size: 100%;
+    font-size: 100%;
 }
 
 .logo-container {
@@ -95,8 +97,8 @@ h3 {
     margin-bottom: 0px;
 }
 
-.logo-container img{
-    width: 130px; 
+.logo-container img {
+    width: 130px;
     height: 130px;
 }
 
@@ -106,8 +108,8 @@ h3 {
     margin-bottom: 0px;
 }
 
-.logo-container-void img{
-    width: 250px; 
+.logo-container-void img {
+    width: 250px;
     height: 250px;
     opacity: 0.6;
 }
@@ -118,21 +120,21 @@ h3 {
     margin-bottom: 0px;
 }
 
-.logo-container-admin img{
-    width: 190px; 
+.logo-container-admin img {
+    width: 190px;
     height: 190px;
     opacity: 0.6;
 }
 
-.offcanvas-body p{
-	 font-size: 30px; /* Dimensione del titolo */
-     margin-bottom: 20px;
-     font-style: Italic;
-     text-align: center; /* Allineamento centrato */
+.offcanvas-body p {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-align: center;
 }
 
-.col-sm-12  {
-    margin-top:10px;
+.col-sm-12 {
+    margin-top: 10px;
 }
 
 .price-filter {
@@ -150,8 +152,6 @@ input[type="range"] {
     border: 2px solid red;
     padding: 10px;
 }
-
-
 
 #carouselExampleIndicators {
     width: auto;
@@ -179,139 +179,180 @@ input[type="range"] {
     z-index: 10;
 }
 
-
-
 .product-image {
     transition: opacity 0.3s ease;
+    width: 200px;
+    height: 250px;
 }
 
 .product-image:hover {
     opacity: 0.7;
 }
 
-.product-image {
-    width: 200px; 
-    height: 250px;
+.map-holder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-    .map-holder {
-      position: relative;
-      width: 100%;
-      height: 100%; /* Altezza dello schermo intero */
-      overflow: hidden;
-    }
+.map-holder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
-    .map-holder iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    /* Aggiungi questo stile per la sezione con le informazioni */
-    .info {
-      background-color: #f0f0f0; /* Sfondo di un altro colore */
-      padding: 50px 0;
-      margin-top: 0px; /* Margine superiore a 0 per essere attaccato alla mappa */
-      height: 50%;
-      margin-bottom: 50px; /* Margine inferiore negativo per evitare spazi vuoti */  
-   }
+.info {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+    margin-top: 0px;
+    height: auto;
+    margin-bottom: 50px;
+}
 
-   .info-title {
-     font-weight: bold; /* Testo in grassetto */
-     font-size: 30px; /* Dimensione del titolo */
-     margin-bottom: 20px;
-     font-style: Italic;
-     text-align: center; /* Allineamento centrato */
-     
-  }
- 
-   .info-text {
-     font-size: 22px; /* Dimensione del testo normale */
-     font-style: Italic; /* Font personalizzato */
-     color: #333; /* Colore del testo */
-     text-align: center; /* Allineamento centrato */
-     padding: 0 40px; /* Padding orizzontale */
-  }
-  .contact{
-      
-      padding: 20px 0;
-      margin-top: 20px; /* Margine superiore a 0 per essere attaccato alla mappa */
-      height: 40%;
-      margin-bottom: 100px; /* Margine inferiore negativo per evitare spazi vuoti */  
-   }
+.info-title {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-align: center;
+}
 
-   .contact-title {
-     font-weight: bold; /* Testo in grassetto */
-     font-size: 30px; /* Dimensione del titolo */
-     margin-bottom: 20px;
-     font-style: Italic;
-     text-align: center; /* Allineamento centrato */
-  }
- 
-   .contact-text {
-     font-size: 22px; /* Dimensione del testo normale */
-     font-style: Italic; /* Font personalizzato */
-     color: #333; /* Colore del testo */
-     text-align: center; /* Allineamento centrato */
-     padding: 0 40px; /* Padding orizzontale */
-  }
+.info-text {
+    font-size: 22px;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    padding: 0 40px;
+}
 
-   .map {
-     height: 60%; /* Margine inferiore negativo per eliminare lo spazio */
+.contact {
+    padding: 20px 0;
+    margin-top: 20px;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.contact-title {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 22px;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.map {
+    height: 60%;
 }
 
 .fixed-container {
-  position: fixed;
-  top: 23%;
-  left: 8%;
-  width: 20%;
-  height:45%;
-  z-index: 1000; /* Assicurati che l'elemento sia sopra gli altri contenuti */
-  /* Aggiungi altre proprietà CSS come padding, box-shadow, ecc. se necessario */
+    position: fixed;
+    top: 23%;
+    left: 8%;
+    width: 20%;
+    height: 45%;
+    z-index: 1000;
 }
 
 .fixed-container-void {
-  position: relative;
-
-  /* Aggiungi altre proprietà CSS come padding, box-shadow, ecc. se necessario */
+    position: relative;
 }
 
 #verticalSeparator {
-  border-left: 1px solid #c0c0c0;
-  padding-left: 20px;
-  padding-right: 20px;
+    border-left: 1px solid #c0c0c0;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-@media (max-width: 991px) { /* Cambia a una larghezza diversa se necessario */
-    .fixed-container {
-        position: static; /* Cambia la posizione da fixed a static */
-        height: 85%;
-        width: 75%;
-        transition: all 340ms ease 0s;
-        /* Altre regole CSS per quando la posizione è static */
-    }
+.voidCart {
+    height: 450px;
+    width: 500px;
+    margin-left: 200px;
 }
 
-@media (max-height: 900px) and (min-width: 992px) { /* Cambia a una larghezza diversa se necessario */
-    .fixed-container {
-        position: static; /* Cambia la posizione da fixed a static */
-        height: auto;
-        width: 75%;
-        /* Altre regole CSS per quando la posizione è static */
+#Popup {
+    position: fixed;
+    width: auto;
+    height: 500px;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Colore opaco */
+    display: none;
+    z-index: 99; /* Posizionato dietro il popup */
+}
+
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .voidCart {
+        margin-left: 100px;
     }
 }
 
 @media (max-width: 767px) {
-	#verticalSeparator {
-		border-left: 0px;
-  		padding-left: 0px;
-	}
+    .voidCart {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .fixed-container {
+        position: static;
+        height: 85%;
+        width: 75%;
+        transition: all 340ms ease 0s;
+    }
+}
+
+@media (max-height: 900px) and (min-width: 992px) {
+    .fixed-container {
+        position: static;
+        height: auto;
+        width: 75%;
+    }
+}
+
+@media (max-width: 767px) {
+    #verticalSeparator {
+        border-left: 0px;
+        padding-left: 0px;
+    }
 }
 
 @media (max-width: 490px) {
     .product-image {
-        width: 150px; 
+        width: 150px;
         height: 200px;
     }
 }
@@ -320,5 +361,4 @@ input[type="range"] {
     .texteduce {
         font-size: 0.8em;
     }
-    
 }

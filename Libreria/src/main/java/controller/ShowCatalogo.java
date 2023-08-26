@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "ShowCatalogo", value = "/ShowCatalogo")
 public class ShowCatalogo extends HttpServlet {
@@ -26,6 +27,7 @@ public class ShowCatalogo extends HttpServlet {
         final String user_db = "root";
         final String pass_db = "admin";
         Connection connessione = null;
+        HttpSession session = request.getSession();
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -69,7 +71,10 @@ public class ShowCatalogo extends HttpServlet {
             request.setAttribute("FcasaEditrice", casaEditrice);
             request.setAttribute("Fmaxprice", prezzo);
 
-            request.getRequestDispatcher("/catalogo.jsp").forward(request, response);
+            if(null != session.getAttribute("admin")) 
+            	request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, response);
+            else 
+            	request.getRequestDispatcher("/catalogo.jsp").forward(request, response);
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();

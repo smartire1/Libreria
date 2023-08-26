@@ -49,7 +49,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				CDAO.deleteCartIsbn(isbn);
 				PDAO.deleteProduct(isbn);
 				request.setAttribute("Success", "Prodotto eliminato dal catalogo");
-				request.getRequestDispatcher("/admin_prodotti.jsp").forward(request, resp);
+				request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, resp);
 				return;
 			}
 			
@@ -59,7 +59,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				CDAO.updateCart(new CartItem(isbn, request.getParameter("titolo"), Double.parseDouble(request.getParameter("prezzo")), request.getParameter("casaEditrice"), "lol"));
 				PDAO.updateProduct(new Products(request.getParameter("isbn"), request.getParameter("titolo"),Double.parseDouble(request.getParameter("prezzo")), request.getParameter("casaEditrice")));
 				request.setAttribute("Success", "Prodotto aggiornato");
-				request.getRequestDispatcher("/admin_prodotti.jsp").forward(request, resp);
+				request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, resp);
 				return;
 			}
 			
@@ -69,7 +69,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				for(Products p: controllo) {
 					if(p.getIsbn().equals(isbn)) {
 						request.setAttribute("ErrorMessage", "isbn gia presente nel database");
-						request.getRequestDispatcher("/admin_inserisci.jsp").forward(request, resp);
+						request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, resp);
 						return;
 					}
 				}
@@ -88,7 +88,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				PDAO.addProduct(new Products(isbn ,request.getParameter("titolo"),Double.parseDouble(request.getParameter("prezzo")),request.getParameter("casaEditrice"), filePathDB));
 							
 				request.setAttribute("Success", "Prodotto aggiunto");
-				request.getRequestDispatcher("/admin_inserisci.jsp").forward(request, resp);
+				request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, resp);
 				return;
 			}
 			
