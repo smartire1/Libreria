@@ -8,8 +8,9 @@ public class OrderItem {
 	private Double prezzo;
 	private String casaEditrice;
 	private int quantity;
+	private String dataOrdine;
 	
-	public OrderItem(int orderItemID, int orderID, String isbn, String titolo, Double prezzo, String casaEditrice, int quantity) {
+	public OrderItem(int orderItemID, int orderID, String isbn, String titolo, Double prezzo, String casaEditrice, int quantity, String data) {
 		super();
 		this.orderItemID = orderItemID;
 		this.orderID = orderID;
@@ -18,6 +19,7 @@ public class OrderItem {
 		this.setPrezzo(prezzo);
 		this.setCasaEditrice(casaEditrice);
 		this.quantity = quantity;
+		this.dataOrdine = data;
 	}
 
 	public int getOrderItemID() {
@@ -74,6 +76,14 @@ public class OrderItem {
 
 	public void setCasaEditrice(String casaEditrice) {
 		this.casaEditrice = casaEditrice;
+	}
+
+	public String getDataOrdine() {
+		return dataOrdine;
+	}
+
+	public void setDataOrdine(String dataOrdine) {
+		this.dataOrdine = dataOrdine;
 	}
 	
 	

@@ -17,6 +17,10 @@ import dao.CartDAO;
 import dao.OrderItemDAO;
 import dao.OrdersDAO;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
 @WebServlet(
 		  name = "Checkout", value = "/Checkout")
 public class Checkout extends HttpServlet{
@@ -37,6 +41,8 @@ public class Checkout extends HttpServlet{
 		List<CartItem> cart;
 		HttpSession session = request.getSession();
 		String emailSession = session.getAttribute("email").toString();
+		DateTimeFormatter form = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		LocalDate dataOdierna = LocalDate.now();
 		
 		
 		try {
@@ -60,7 +66,7 @@ public class Checkout extends HttpServlet{
 				OrderItemDAO OIDAO = new OrderItemDAO(connessione);
 				
 				for(CartItem c: cart) {
-					OIDAO.createOrderItem(lastID +1, c.getIsbn(), c.getTitolo(), c.getPrezzo(), c.getCasaEditrice(), 1);
+					OIDAO.createOrderItem(lastID +1, c.getIsbn(), c.getTitolo(), c.getPrezzo(), c.getCasaEditrice(), 1, dataOdierna.format(form));
 					cartDAO.deleteCart(c.getIsbn(), emailSession);
 				}
 				

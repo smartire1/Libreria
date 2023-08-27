@@ -16,9 +16,15 @@
 <body class="bgSand">
  <div class="bg-white">
     <div class="logo-container">
-        <a href="index.jsp">
-            <img src="img/as.png" alt="Logo">
-        </a>
+	     <%if(session.getAttribute("admin") == null) {%>
+	        <a href="index.jsp">
+	            <img src="img/as.png" alt="Logo">
+	        </a>
+	    <%} else { %>
+	        <a href="index_admin.jsp">
+	            <img src="img/as.png" alt="Logo">
+	        </a>
+	    <%} %>    
     </div>
   	</div>
     <jsp:include page="navbar.jsp" />
@@ -49,7 +55,8 @@
                                 <li><strong>isbn:</strong> <%= o.getIsbn() %></li>
                                 <li><strong>titolo:</strong> <%= o.getTitolo() %></li>
                                 <li><strong>prezzo:</strong> &#8364 <%= o.getPrezzo() %></li>
-                                <li><strong>casaEditrice:</strong> <%= o.getCasaEditrice() %></li>
+                                <li><strong>casa editrice:</strong> <%= o.getCasaEditrice() %></li>
+                                <li><strong>data ordine:</strong> <%= o.getDataOrdine() %></li>
                             </ul>
                         </div>
                     </div>

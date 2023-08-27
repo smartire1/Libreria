@@ -58,17 +58,17 @@
 					<div class="col-lg-3 col-md-12 col-sm-12">
 					    <div class="form-group">
 					        <p for="datepicker">Data inizio</p>
-					        <input type="text" class="form-control datepicker" id="datepicker">
+					        <input type="text" class="form-control datepicker start-date">
 					    </div>
 					</div>
 	                <div class="col-lg-3 col-md-12 col-sm-12">
 	              		<div class="form-group">
 		                	<p for="datepicker">Data fine</p>
-							<input type="text" class="form-control datepicker" id="datepicker">
+							<input type="text" class="form-control datepicker end-date">
 						</div>
 	                </div>
 	                <div class="col-lg-3 col-md-12 col-sm-12">
-                        <form action="../UserOrdini" method="post">
+                        <form id="controllo" action="../UserOrdini" method="post">
                             <button type="submit" class="btn btn-outline-danger">Visualizza</button>
                         </form>                  
 	                </div>
@@ -78,33 +78,35 @@
    	 <br>
    	 <br>
    	 
-     <div class="text-center container table-center">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Cognome</th>
-                    <th>Email</th>
-                    <th>Azioni</th>
-                </tr>
-            </thead>
-            <tbody>
-                <%-- Esegui un loop per ogni utente e crea una riga della tabella --%>
-                <% for (Customer  c: customers) { if(!c.getRole()){%>
-                    <tr>
-                        <td><%= c.getNome() %></td>
-                        <td><%= c.getCognome() %></td>
-                        <td><%= c.getEmail() %></td>
-                        <td>
-                            <form action="../UserOrdini" method="post">
-                                <input type="hidden" name="email" value="<%= c.getEmail() %>">
-                                <button type="submit" class="btn btn-outline-danger">Visualizza ordini</button>
-                            </form>
-                        </td>
-                    </tr>
-                <% }} %>
-            </tbody>
-        </table>
+   	 <div class="container pricingTableBackX">
+	     <div class="text-center container table-center">
+	        <table class="table">
+	            <thead>
+	                <tr>
+	                    <th>Nome</th>
+	                    <th>Cognome</th>
+	                    <th>Email</th>
+	                    <th>Azioni</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <%-- Esegui un loop per ogni utente e crea una riga della tabella --%>
+	                <% for (Customer  c: customers) { if(!c.getRole()){%>
+	                    <tr>
+	                        <td><%= c.getNome() %></td>
+	                        <td><%= c.getCognome() %></td>
+	                        <td><%= c.getEmail() %></td>
+	                        <td>
+	                            <form action="UserOrdini" method="post">
+	                                <input type="hidden" name="email" value="<%= c.getEmail() %>">
+	                                <button type="submit" class="btn btn-outline-danger">Visualizza ordini</button>
+	                            </form>
+	                        </td>
+	                    </tr>
+	                <% }} %>
+	            </tbody>
+	        </table>
+	    </div>
     </div>
     
     <footer class="footer bg-white">
@@ -124,13 +126,23 @@
 	<script>
 	    $(function() {
 	        $(".datepicker").datepicker({
-	            dateFormat: "yy-mm-dd",  // Formato della data
-	            minDate: "-1M",    // Data minima selezionabile (oggi)
-	            maxDate: new Date()          // Data massima selezionabile (1 mese nel futuro)
+	            dateFormat: 'yy-mm-dd',
+	            minDate: "-1M",
+	            maxDate: new Date()
+	        });
+	
+	        $("#controllo").on("submit", function(event) {
+	            var startDate = $(".start-date").datepicker("getDate");
+	            var endDate = $(".end-date").datepicker("getDate");
+	            
+	            if (endDate < startDate) {
+	                event.preventDefault(); // Blocca l'invio del form
+	                alert("La data di fine deve essere maggiore o uguale alla data di inizio.");
+	            }
 	        });
 	    });
-	</script>
-            
+	</script>   
+	     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>

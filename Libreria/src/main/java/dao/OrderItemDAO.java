@@ -16,8 +16,8 @@ public class OrderItemDAO {
         this.connection = connection;
     }
 
-    public void createOrderItem(int orderId, String isbn, String titolo, Double prezzo, String casaEditrice, int quantity) throws SQLException {
-        String query = "INSERT INTO OrderItems (OrderID, isbn, titolo, prezzo, casaEditrice, Quantity) VALUES (?, ?, ?, ?, ?, ?)";
+    public void createOrderItem(int orderId, String isbn, String titolo, Double prezzo, String casaEditrice, int quantity, String data) throws SQLException {
+        String query = "INSERT INTO OrderItems (OrderID, isbn, titolo, prezzo, casaEditrice, Quantity, dataOrdine) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, orderId);
             statement.setString(2, isbn);
@@ -25,6 +25,7 @@ public class OrderItemDAO {
             statement.setDouble(4, prezzo);
             statement.setString(5, casaEditrice);
             statement.setInt(6, quantity);
+            statement.setString(7, data);
             statement.executeUpdate();
         }
     }
@@ -42,7 +43,8 @@ public class OrderItemDAO {
                     String titolo = resultSet.getString("titolo");
                     Double prezzo = resultSet.getDouble("prezzo");
                     String casaEditrice = resultSet.getString("casaEditrice");
-                    OrderItem orderItem = new OrderItem(orderItemId, orderId, isbn, titolo, prezzo, casaEditrice, quantity);
+                    String data = resultSet.getString("dataOrdine");
+                    OrderItem orderItem = new OrderItem(orderItemId, orderId, isbn, titolo, prezzo, casaEditrice, quantity, data);
                     orderItems.add(orderItem);
                 }
             }
