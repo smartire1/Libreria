@@ -14,6 +14,34 @@ padding: 25px 10px;
     margin-bottom: 10px;
 }
 
+.pricingTableBackX{
+	background-color: rgba(0, 0, 0, 0); 
+	margin-top: 2%;
+    padding: 0px 85px;
+    transition: all 340ms ease 0s;    
+    margin-bottom: 10px;
+}
+
+.pricingTableBackX h4{
+	letter-spacing: 2px;
+    font-size: 15px;
+    font-style: italic;
+    color: #8b909d;
+    line-height: 26px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+.pricingTableBackX p{
+	letter-spacing: 2px;
+    font-size: 15px;
+    font-style: italic;
+    color: #8b909d;
+    line-height: 26px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
 .pricingTable{
 	border-radius: 28px;
 	margin-top: 2%;

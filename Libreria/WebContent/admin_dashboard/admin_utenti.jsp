@@ -2,38 +2,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <meta charset="UTF-8">
+    <base href="/Libreria/" />
+    <meta charset="ISO-8859-1">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="icon" type="image/png" href="img/ico.png">
     <title>root@AS-New Readings</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <!-- Aggiungi eventuali stili CSS o script JS necessari -->
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet"> 
+    
+    <script>
+        function voidCartMessage() {
+            document.getElementById("table-bg").style.height = "40%";    
+        }
+    </script>    
+    
+    <title>root@AS-New Readings</title>
 </head>
-<body>
-		<div class="nav-container">
-		<nav class="centered-logo top-bar">
-		  	<div class="container">
-				  <div class="row">
-				    <div class="col-sm-12 text-center">
-				    	<form >
-							<a href="../index_admin.jsp"><img class="logo logo-dark" alt="Logo" src="images/eer.png" style="width: 80px; height: 60px;"></a>
-						</form>
-						<p class="lead">Accesso eseguito come Admin: </p>
-						<p class="lead"> Bentornato <%=session.getAttribute("nome") %></p>
-				    </div>
-				  </div>
-				  <br>
-				  <div class="row">			    
-				    <div class="col text-center">
-						<form action="Logout" method="post">
-							<button class="btn btn-danger">Logout</button>
-						</form>
-				    </div>
-				  </div>
-			</div>
-		</nav>
-	</div>
+<body >
+    <div class="bg-white">
+        <div class="logo-container">
+            <a href="index_admin.jsp">
+                <img src="img/as.png" alt="Logo">
+            </a>
+            <p style="margin-bottom: 0; padding-bottom: 15px;">Logged as Admin</p>
+        </div>
+    </div>
+    
+    <jsp:include page="../navbar.jsp" />
 	<br>
+	
 	<%String db_url = "jdbc:mysql://localhost:3306/Librerie";
     String user_db = "root";
     String pass_db = "admin";
@@ -44,7 +49,36 @@
     List<Customer> customers = CDAO.getAllCustomers();
 	%>
 	
-     <div class="container table-center">
+        <div class="container pricingTableBackX">
+	        <div class="text-center pricingTable">
+	            <div class="row d-flex align-items-center">
+	                <div class="col-lg-3 col-md-12 col-sm-12 ">
+						<h4>Visualizza ordini complessivi</h4>
+	                </div>
+					<div class="col-lg-3 col-md-12 col-sm-12">
+					    <div class="form-group">
+					        <p for="datepicker">Data inizio</p>
+					        <input type="text" class="form-control datepicker" id="datepicker">
+					    </div>
+					</div>
+	                <div class="col-lg-3 col-md-12 col-sm-12">
+	              		<div class="form-group">
+		                	<p for="datepicker">Data fine</p>
+							<input type="text" class="form-control datepicker" id="datepicker">
+						</div>
+	                </div>
+	                <div class="col-lg-3 col-md-12 col-sm-12">
+                        <form action="../UserOrdini" method="post">
+                            <button type="submit" class="btn btn-outline-danger">Visualizza</button>
+                        </form>                  
+	                </div>
+	            </div>
+	        </div>
+        </div>
+   	 <br>
+   	 <br>
+   	 
+     <div class="text-center container table-center">
         <table class="table">
             <thead>
                 <tr>
@@ -72,5 +106,32 @@
             </tbody>
         </table>
     </div>
+    
+    <footer class="footer bg-white">
+        <div class="container">
+            <nav>
+                <p class="copyright text-center">
+                    Copyright
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <a href="index_admin.jsp">AS-New Readings</a>
+                </p>
+            </nav>
+        </div>
+    </footer>    
+    
+	<script>
+	    $(function() {
+	        $(".datepicker").datepicker({
+	            dateFormat: "yy-mm-dd",  // Formato della data
+	            minDate: "-1M",    // Data minima selezionabile (oggi)
+	            maxDate: new Date()          // Data massima selezionabile (1 mese nel futuro)
+	        });
+	    });
+	</script>
+            
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>
