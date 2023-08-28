@@ -52,7 +52,7 @@ public class UserOrdini extends HttpServlet{
 					mappa.put(o.getId(), OIDAO.getOrderItemsByOrderId(o.getId()));
 				}
 				request.setAttribute("HashMap", mappa);
-				request.getRequestDispatcher("/user_ordini.jsp").forward(request, resp);
+				request.getRequestDispatcher("/admin_dashboard/admin_ordini_view.jsp").forward(request, resp);
 				return;
 			} catch(Exception e) {
 				e.printStackTrace();
