@@ -17,14 +17,7 @@
     <link href="css/footer.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/card.css" rel="stylesheet"> 
-    
-    <script>
-        function voidCartMessage() {
-            document.getElementById("table-bg").style.height = "40%";    
-        }
-    </script>    
-    
-    <title>root@AS-New Readings</title>
+       
 </head>
 <body >
     <div class="bg-white">

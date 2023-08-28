@@ -78,35 +78,50 @@
         </div>
     </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <p>Seguici sui social per rimanere sempre aggiornato!</p>
-                        <ul class="social-icons">
-                            <li>
-                                <a href="https://twitter.com/login?lang=it">
-                                    <i class="fab fa-twitter fa-2x"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/">
-                                    <i class="fab fa-facebook fa-2x"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.google.com/?hl=it">
-                                    <i class="fab fa-instagram fa-2x"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
+	     <%if(session.getAttribute("admin") == null) {%>
+		    <footer>
+		        <div class="footer-container">
+		            <div class="container">
+		                <div class="row">
+		                    <div class="col-sm-12 text-center">
+		                        <p>Seguici sui social per rimanere sempre aggiornato!</p>
+		                        <ul class="social-icons">
+		                            <li>
+		                                <a href="https://twitter.com/login?lang=it">
+		                                    <i class="fab fa-twitter fa-2x"></i>
+		                                </a>
+		                            </li>
+		                            <li>
+		                                <a href="https://www.facebook.com/">
+		                                    <i class="fab fa-facebook fa-2x"></i>
+		                                </a>
+		                            </li>
+		                            <li>
+		                                <a href="https://www.google.com/?hl=it">
+		                                    <i class="fab fa-instagram fa-2x"></i>
+		                                </a>
+		                            </li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </footer>
+	    <%} else { %>
+		    <footer class="footer bg-white">
+		        <div class="container">
+		            <nav>
+		                <p class="copyright text-center">
+		                    Copyright
+		                    <script>
+		                        document.write(new Date().getFullYear())
+		                    </script>
+		                    <a href="index_admin.jsp">AS-New Readings</a>
+		                </p>
+		            </nav>
+		        </div>
+		    </footer>   
+	    <%} %>     
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
