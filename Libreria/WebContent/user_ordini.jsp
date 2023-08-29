@@ -33,50 +33,48 @@
     <br>
   
     <div class="container text-center">
+     <div class="card pricingTable ">
         <h2 class="info-title">Ordini Effettuati</h2>
     </div>
-    <div class="container pricingTable" id="table-bg">
-        <div class="row">
-            <% 
-                HashMap<Integer, List<OrderItem>> mappa = (HashMap<Integer, List<OrderItem>>) request.getAttribute("HashMap");
-                if (!mappa.isEmpty()) { 
-                    for (Map.Entry<Integer, List<OrderItem>> entry : mappa.entrySet()) { 
-            %>
-            <div class="col-lg-4 col-md-6 mb-4"> 
-                <div class="pircingTable">
-                    <h3 class="numero_ordine">Numero ordine: <%= entry.getKey() %> </h3>
+</div>
+    <div class="container">
+    <div class="row">
+        <% 
+            HashMap<Integer, List<OrderItem>> mappa = (HashMap<Integer, List<OrderItem>>) request.getAttribute("HashMap");
+            if (!mappa.isEmpty()) { 
+                for (Map.Entry<Integer, List<OrderItem>> entry : mappa.entrySet()) { 
+        %>
+        <div class="col-lg-4 col-md-6 mb-4"> 
+            <div class="card mb-4 pricingTable"> <!-- Inizia una nuova card per ogni ordine -->
+                <div class="card-body ">
+                    <h3 class="card-title">Numero ordine: <%= entry.getKey() %></h3>
                     <% 
                         for (OrderItem o : entry.getValue()) { 
                     %>
-                    <div class="col-md col-sm">
-                        <div class="pricingTable">
-                            <h3 class="title"><%= o.getTitolo() %></h3>
-                            <ul class="pricing-content">
-                                <li><strong>isbn:</strong> <%= o.getIsbn() %></li>
-                                <li><strong>titolo:</strong> <%= o.getTitolo() %></li>
-                                <li><strong>prezzo:</strong> &#8364 <%= o.getPrezzo() %></li>
-                                <li><strong>casa editrice:</strong> <%= o.getCasaEditrice() %></li>
-                                <li><strong>data ordine:</strong> <%= o.getDataOrdine() %></li>
-                            </ul>
-                        </div>
+                    <div class="pricing-content">
+                        <strong>isbn:</strong> <%= o.getIsbn() %><br>
+                        <strong>titolo:</strong> <%= o.getTitolo() %><br>
+                        <strong>prezzo:</strong> &#8364 <%= o.getPrezzo() %><br>
+                        <strong>casaEditrice:</strong> <%= o.getCasaEditrice() %><br>
                     </div>
                     <% 
                         } 
                     %>
                 </div>
             </div>
-            <% 
-                    } 
-                } else { 
-            %>
-            <div class="col-12">
-                <p class="lead text-center"> Nessun ordine effettuato</p>
-            </div>
-            <% 
-                } 
-            %>
         </div>
+        <% 
+                } 
+            } else { 
+        %>
+        <div class="col-12">
+            <p class="lead text-center">Nessun ordine effettuato</p>
+        </div>
+        <% 
+            } 
+        %>
     </div>
+</div>
 
 	     <%if(session.getAttribute("admin") == null) {%>
 		    <footer>
