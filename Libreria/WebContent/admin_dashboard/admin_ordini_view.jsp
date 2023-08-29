@@ -31,44 +31,24 @@
     
     <jsp:include page="../navbar.jsp" />
 	<br></br>
-	
-	<div class="container-sm" style="max-width: 200px;">
-		<p class="border border-danger p-3 lead text-center">Ordini effettuati:</p>
-	</div>
-	<div class="container">
-	<% HashMap<Integer, List<OrderItem>> mappa = (HashMap<Integer, List<OrderItem>>) request.getAttribute("HashMap");
-	if (!mappa.isEmpty()) { %>
-	    <div class="container demobg">
-	        <div class="row">	            
-	          	<%for (Map.Entry<Integer, List<OrderItem>> entry : mappa.entrySet()) { %>	      
-	                <div class="col-md-4 col-sm-4 border border-success">
-	                    <div class="pricingTable">
-	                        <br>
-	                        <h3 class="numero_ordine">Numero ordine: <%= entry.getKey() %> </h3>
-	                        <span class="subtitle"></span>
-	                        <% for (OrderItem o : entry.getValue()) { %>	
-	                            <div class="col-md col-sm border border-danger">
-	                                <div class="pricingTable">
-	                                    <br>
-	                                    <h3 class="title"><%= o.getTitolo() %></h3>              
-	                                    <span class="subtitle"></span>
-	                                    <ul class="pricing-content">
-	                                        <li><strong>isbn:</strong> <%= o.getIsbn() %></li>
-	                                        <li><strong>titolo:</strong> <%= o.getTitolo() %></li>
-	                                        <li><strong>prezzo:</strong> &#8364 <%= o.getPrezzo() %></li>
-	                                        <li><strong>casaEditrice:</strong> <%= o.getCasaEditrice() %></li>
-	                                    </ul>
-	                                </div>
-	                            </div> 
-	                        <% } %>			                            
-	                    </div>
-	                </div> 
-	            <% } %>
-	        </div>
-	    </div>
-	<% }	else if(mappa.isEmpty()) { %>
-	    		<p class="lead text-center"> Nessun ordine effettuato</p>
-	<% } %>
-    </div>
+    
+    
+    
+    <footer class="footer">
+        <div class="container">
+            <nav>
+                <p class="copyright text-center">
+                    Copyright
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <a href="index_admin.jsp">AS-New Readings</a>
+                </p>
+            </nav>
+        </div>
+    </footer>        
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> 
 </body>
 </html>
