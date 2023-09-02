@@ -67,6 +67,10 @@
 		
 		function addButton(){
 			document.getElementById("Operation").innerHTML = "INSERIMENTO NUOVO PRODOTTO";
+        	const isbnElement = document.getElementById("bookIsbn");
+        	isbnElement.value = isbn;
+        	isbnElement.removeAttribute("readonly");
+        				
 			document.getElementById("bookIsbn").value = "";
 			document.getElementById("bookName").value = "";
 			document.getElementById("bookPrezzo").value = "";
@@ -75,4 +79,13 @@
 			document.getElementById("editButton").style.display = "none";
 			document.getElementById("addButton").style.display = "block";
 			document.getElementById("inputImg").style.display = "block";	
+		}
+		
+		
+		function viewButton(email, nome, cognome) {
+		    document.getElementById("Operation").innerHTML = "User: " + email;
+		    document.getElementById("Unome").value = nome;
+		    document.getElementById("Ucognome").value = cognome;
+		    document.getElementById("Uemail").value = email;
+		    document.getElementById("toSend").value = email;
 		}

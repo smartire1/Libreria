@@ -51,6 +51,28 @@ public class OrderItemDAO {
         }
         return orderItems;
     }
+    
+    public List<OrderItem> getAllOrderItems() throws SQLException {
+        List<OrderItem> orderItems = new ArrayList<>();
+        String query = "SELECT * FROM OrderItems";
+        try (PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+            while (resultSet.next()) {
+                int orderItemId = resultSet.getInt("OrderItemID");
+                int orderId = resultSet.getInt("OrderID");
+                String isbn = resultSet.getString("ISBN");
+                int quantity = resultSet.getInt("Quantity");
+                String titolo = resultSet.getString("titolo");
+                Double prezzo = resultSet.getDouble("prezzo");
+                String casaEditrice = resultSet.getString("casaEditrice");
+                String data = resultSet.getString("dataOrdine");
+                OrderItem orderItem = new OrderItem(orderItemId, orderId, isbn, titolo, prezzo, casaEditrice, quantity, data);
+                orderItems.add(orderItem);
+            }
+        }
+        return orderItems;
+    }
+
 
     public void updateOrderItem(int orderItemId, int quantity) throws SQLException {
         String query = "UPDATE OrderItems SET Quantity = ? WHERE OrderItemID = ?";

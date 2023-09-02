@@ -100,7 +100,7 @@
 		<% } %>
 	
 	
-	    <div class="pricingTableBack" id="table-bg">
+	    <div class="pricingTableBack text-center" id="table-bg">
 	        <div class="row ">
 		        <% if (res.next()) { %>
 		            <% do {%>	

@@ -41,7 +41,7 @@
     CustomerDAO CDAO = new CustomerDAO(connessione);
     List<Customer> customers = CDAO.getAllCustomers();
 	%>
-	
+	<form id="controllo" action="UserOrdini" method="post">
         <div class="container pricingTableBackX">
 	        <div class="text-center pricingTable">
 	            <div class="row d-flex align-items-center">
@@ -51,56 +51,64 @@
 					<div class="col-lg-3 col-md-12 col-sm-12">
 					    <div class="form-group">
 					        <p for="datepicker">Data inizio</p>
-					        <input type="text" class="form-control datepicker start-date">
+					        <input id="dataI" name="dataI" type="text" class="form-control datepicker start-date">
 					    </div>
 					</div>
 	                <div class="col-lg-3 col-md-12 col-sm-12">
 	              		<div class="form-group">
 		                	<p for="datepicker">Data fine</p>
-							<input type="text" class="form-control datepicker end-date">
+							<input id="dataF" name="dataF" type="text" class="form-control datepicker end-date">
 						</div>
 	                </div>
-	                <div class="col-lg-3 col-md-12 col-sm-12">
-                        <form id="controllo" action="../UserOrdini" method="post">
-                            <button type="submit" class="btn btn-outline-danger">Visualizza</button>
-                        </form>                  
+	                <div class="col-lg-3 col-md-12 col-sm-12">               
+                        <button name="controllo" type="submit" onclick="return validateFormDate();" class="btn btn-outline-danger">Visualizza</button>                                      
 	                </div>
 	            </div>
 	        </div>
         </div>
+     </form> 
    	 <br>
-   	 <br>
-   	 
-   	 <div class="container pricingTableBackX">
-	     <div class="text-center container table-center">
-	        <table class="table">
-	            <thead>
-	                <tr>
-	                    <th>Nome</th>
-	                    <th>Cognome</th>
-	                    <th>Email</th>
-	                    <th>Azioni</th>
-	                </tr>
-	            </thead>
-	            <tbody>
-	                <%-- Esegui un loop per ogni utente e crea una riga della tabella --%>
-	                <% for (Customer  c: customers) { if(!c.getRole()){%>
-	                    <tr>
-	                        <td><%= c.getNome() %></td>
-	                        <td><%= c.getCognome() %></td>
-	                        <td><%= c.getEmail() %></td>
-	                        <td>
-	                            <form action="UserOrdini" method="post">
-	                                <input type="hidden" name="email" value="<%= c.getEmail() %>">
-	                                <button type="submit" class="btn btn-outline-danger">Visualizza ordini</button>
-	                            </form>
-	                        </td>
-	                    </tr>
-	                <% }} %>
-	            </tbody>
-	        </table>
-	    </div>
-    </div>
+   	 <br>  	 
+		    <div class="overlay" id="Overlay"></div>
+		    <div class="container text-center pricingTable" id="Popup1">
+		        <button id="closeBtn"><i class="fas fa-times"></i></button>
+		        <div class="container">
+		            <h3 id="Operation" class="title">User: </h3>
+		            <form action="UserOrdini" method="post" onSubmit="submitForm()">
+		                <ul class="pricing-content">
+		                    <li class="form-group">
+		                        <strong>nome:</strong>
+		                        <input type="text" class="form-control" readonly="readonly" name="Unome" id="Unome" value="" />
+		                    </li>
+		                    <li class="form-group">
+		                        <strong>cognome:</strong>
+		                        <input type="text" class="form-control" readonly="readonly" name="Ucognome" id="Ucognome" value="" />
+		                    </li>
+		                    <li class="form-group">
+		                        <strong>email:</strong>
+		                        <input type="text" class="form-control" readonly="readonly" name="Uemail" id="Uemail" value="" />
+		                        <input type="hidden" name="email" id="toSend" value="">
+		                    </li>             
+		                </ul>
+		                <div class="text-center">
+		                    <button id="viewButton" type="submit" class="btn btn-outline-danger">Visualizza Ordini</button>		                        
+		                </div>                                                                                
+		            </form>         
+		        </div>
+		    </div>
+		       	 
+	<div class="container text-center pricingTableUser">
+		<h3>User</h3>
+		<div class="scrollable-content">
+		<% for (Customer  c: customers) { if(!c.getRole()) {%>		
+		
+			<div class="container text-center">				
+				<h2><a onclick="viewButton('<%= c.getEmail() %>', '<%= c.getNome() %>', '<%= c.getCognome() %>')" class="open-popup-btn"><%= c.getEmail() %></a></h2>
+				<br><br>
+			</div>		
+		<% }} %>
+		</div>
+	</div>
     
     <footer class="footer bg-white">
         <div class="container">
@@ -119,7 +127,7 @@
 	<script>
 	    $(function() {
 	        $(".datepicker").datepicker({
-	            dateFormat: 'yy-mm-dd',
+	            dateFormat: 'dd-mm-yy',
 	            minDate: "-1M",
 	            maxDate: new Date()
 	        });
@@ -134,8 +142,18 @@
 	            }
 	        });
 	    });
+	    
+	    function validateFormDate() {  
+	    	  if ($("#dataI").val() === "" ||
+	    	      $("#dataF").val() === "") {
+	    	    alert('Riempire ogni campo data');
+	    	    return false;
+	    	  }
+	    	};
 	</script>   
-	     
+
+	<script src="js/AddRemove.js"></script>
+    <script src="js/offCanvas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>

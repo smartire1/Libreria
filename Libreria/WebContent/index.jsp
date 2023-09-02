@@ -14,6 +14,12 @@
 	
 </head>
 <body>
+	<%if(session.getAttribute("admin") != null) {%>
+		<script>
+        	window.location.href = 'index_admin.jsp';
+    	</script>
+	<%} %>
+
 	<div class="logo-container">
 		<a href="index.jsp">
 			<img src="img/as.png" alt="Logo">

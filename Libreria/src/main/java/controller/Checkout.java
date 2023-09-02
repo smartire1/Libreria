@@ -19,7 +19,6 @@ import dao.OrdersDAO;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 
 @WebServlet(
 		  name = "Checkout", value = "/Checkout")
@@ -66,7 +65,7 @@ public class Checkout extends HttpServlet{
 				OrderItemDAO OIDAO = new OrderItemDAO(connessione);
 				
 				for(CartItem c: cart) {
-					OIDAO.createOrderItem(lastID +1, c.getIsbn(), c.getTitolo(), c.getPrezzo(), c.getCasaEditrice(), 1, dataOdierna.format(form));
+					OIDAO.createOrderItem(lastID +1, c.getIsbn(), c.getTitolo(), c.getPrezzo(), c.getCasaEditrice(), c.getQuantita(), dataOdierna.format(form));
 					cartDAO.deleteCart(c.getIsbn(), emailSession);
 				}
 				

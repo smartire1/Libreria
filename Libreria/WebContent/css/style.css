@@ -126,6 +126,11 @@ h3 {
     opacity: 0.6;
 }
 
+.scrollable-content {
+    max-height: 190px; /* Imposta l'altezza massima del div */
+    overflow-y: auto; /* Aggiunge una barra di scorrimento verticale se necessario */
+}
+
 .offcanvas-body p {
     font-size: 30px;
     margin-bottom: 20px;
@@ -284,6 +289,20 @@ input[type="range"] {
     position: fixed;
     width: auto;
     height: 500px;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none;
+}
+
+#Popup1 {
+    position: fixed;
+    width: 300px;
+    height: 375px;
     z-index: 100;
     top: 50%;
     left: 50%;
