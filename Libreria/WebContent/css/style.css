@@ -11,6 +11,8 @@ h3 {
     color: white;
 }
 
+
+
 .btn {
     border-width: 2px;
     color: brown;
@@ -152,6 +154,7 @@ h3 {
 input[type="range"] {
     width: 175px;
 }
+
 
 .row-border {
     border: 2px solid red;

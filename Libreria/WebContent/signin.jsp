@@ -37,7 +37,8 @@
 			                            <input id="cognome1" type="text" placeholder="cognome" name="cognome" />
 			                        </div>
 			                        <div class="col-sm-12">
-			                            <input id="email1" type="text" placeholder="email" name="email" />
+			                            <input class="email1" type="text" placeholder="email" name="email" pattern="[a-zA-Z0-9._]+(@gmail\.com|@outlook\.com)$"/>
+			                        	
 			                        </div>
 			                        <div class="col-sm-12">
 			                            <input id="pass1" type="password" placeholder="Password" name="pass" />

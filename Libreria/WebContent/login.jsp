@@ -28,7 +28,8 @@
 					<div class="container">
 						<div class="row text-center">
 							<div class="col-sm-12">
-								<input type="text" placeholder="email" name="email"/>
+								<input class="email1" type="text" placeholder="email" name="email" pattern="[a-zA-Z0-9._]+(@gmail\.com|@outlook\.com)$"/>
+								
 							</div>
 							<div class="col-sm-12">
 								<input type="password" placeholder="Password" name="pass"/>
