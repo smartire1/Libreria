@@ -25,7 +25,7 @@ public class RimuoviCarrello extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		
 		HttpSession session = request.getSession();
 		final String db_url = "jdbc:mysql://localhost:3306/Librerie";

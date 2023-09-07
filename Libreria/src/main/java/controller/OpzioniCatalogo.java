@@ -29,7 +29,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		
 		final String db_url = "jdbc:mysql://localhost:3306/Librerie";
 		final String user_db = "root";

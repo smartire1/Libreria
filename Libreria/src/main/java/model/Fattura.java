@@ -8,7 +8,7 @@ public class Fattura {
 	private int quantita;
 	
 	public Fattura() {
-		
+		//è il costruttore
 	}
 
 	public int getId() {
