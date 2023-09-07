@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="java.sql.*" import="java.text.DecimalFormat" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 	<meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,7 +86,7 @@
 												<div class="col">
 													<div>
 														<h3 class="title"><%= res.getString("titolo") %></h3>
-														<img src="<%= res.getString("img") %>" class="card-img-top">
+														<img src="<%= res.getString("img") %>" class="card-img-top" alt="Descrizione dell'immagine">
 													</div>
 												</div>
 												<div id="verticalSeparator" class="col d-flex justify-content-center align-items-center">

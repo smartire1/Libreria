@@ -73,8 +73,8 @@ padding: 25px 10px;
     display: inline-block;
     border: none;
     background: none;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     cursor: pointer; /* Aggiunge un effetto "pointer" al passaggio del mouse */
     text-decoration: underline; /* Aggiunge il sottolineato al testo */
 }
