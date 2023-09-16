@@ -1,13 +1,11 @@
 package controller;
 
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Base64;
 import java.util.List;
 
-import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +18,7 @@ import dao.CartDAO;
 
 @WebServlet(
 		  name = "OpzioniCatalogo", value = "/OpzioniCatalogo")
-public class OpzioniCatalogo <T> extends HttpServlet{
+public class OpzioniCatalogo extends HttpServlet{
 
 	/**
 	 * 
@@ -35,6 +33,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 		final String user_db = "root";
 		final String pass_db = "admin";
 		Connection connessione;
+		String path = "/admin_dashboard/admin_prodotti.jsp";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -49,7 +48,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				CDAO.deleteCartIsbn(isbn);
 				PDAO.deleteProduct(isbn);
 				request.setAttribute("Success", "Prodotto eliminato dal catalogo");
-				request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, resp);
+				request.getRequestDispatcher(path).forward(request, resp);
 				return;
 			}
 			
@@ -59,7 +58,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				CDAO.updateCart(new CartItem(isbn, request.getParameter("titolo"), Double.parseDouble(request.getParameter("prezzo")), request.getParameter("casaEditrice"), "lol"));
 				PDAO.updateProduct(new Products(request.getParameter("isbn"), request.getParameter("titolo"),Double.parseDouble(request.getParameter("prezzo")), request.getParameter("casaEditrice")));
 				request.setAttribute("Success", "Prodotto aggiornato");
-				request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, resp);
+				request.getRequestDispatcher(path).forward(request, resp);
 				return;
 			}
 			
@@ -69,7 +68,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				for(Products p: controllo) {
 					if(p.getIsbn().equals(isbn)) {
 						request.setAttribute("ErrorMessage", "isbn gia presente nel database");
-						request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, resp);
+						request.getRequestDispatcher(path).forward(request, resp);
 						return;
 					}
 				}
@@ -88,7 +87,7 @@ public class OpzioniCatalogo <T> extends HttpServlet{
 				PDAO.addProduct(new Products(isbn ,request.getParameter("titolo"),Double.parseDouble(request.getParameter("prezzo")),request.getParameter("casaEditrice"), filePathDB));
 							
 				request.setAttribute("Success", "Prodotto aggiunto");
-				request.getRequestDispatcher("/admin_dashboard/admin_prodotti.jsp").forward(request, resp);
+				request.getRequestDispatcher(path).forward(request, resp);
 				return;
 			}
 			

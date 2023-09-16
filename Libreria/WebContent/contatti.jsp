@@ -23,7 +23,7 @@
 
     <section class="map">
         <div class="map-holder">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6043.058601307324!2d14.78893848995371!3d40.772376356289385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bc5a5643af19d%3A0xc377a069f69748ad!2sDipartimento%20di%20Informatica%2C%20Universit%C3%A0%20di%20Salerno!5e0!3m2!1sit!2sit!4v1690295820275!5m2!1sit!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe title="posizione" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6043.058601307324!2d14.78893848995371!3d40.772376356289385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bc5a5643af19d%3A0xc377a069f69748ad!2sDipartimento%20di%20Informatica%2C%20Universit%C3%A0%20di%20Salerno!5e0!3m2!1sit!2sit!4v1690295820275!5m2!1sit!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 

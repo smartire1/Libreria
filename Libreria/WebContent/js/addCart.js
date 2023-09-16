@@ -3,11 +3,11 @@
  */
 
 function addToCart(isbn, email) {
-  var xhttp = new XMLHttpRequest();
+  let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       // Gestisci la risposta del server, se necessario
-      var response = this.responseText;
+      		// let response = this.responseText;
       // Esegui altre azioni o aggiornamenti sulla pagina, se necessario
       alert('Prodotto aggiunto');
     }

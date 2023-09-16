@@ -107,7 +107,7 @@
 		            <div class="col-xxl-3 col-xl-4 col-lg-6 d-flex justify-content-center" style="margin-top: 60px; ">
 		                <div class="card pricingTable" >
 		                    <h3 class="title" ><%= res.getString("titolo") %> </h3>
-		                    <span><img src="<%= res.getString("img") %>" class="card-img-top"></span>
+		                    <span><img src="<%= res.getString("img") %>" alt="img" class="card-img-top"></span>
 		                    <br>
 		                    <div class="card-body">
 		                        <hr/><p><strong>ISBN: </strong><%= res.getString("isbn") %>  <input id="isbn" name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></p>

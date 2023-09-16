@@ -73,7 +73,6 @@ padding: 25px 10px;
     display: inline-block;
     border: none;
     background: none;
-    padding: 0px;
     margin: 0px;
     cursor: pointer; /* Aggiunge un effetto "pointer" al passaggio del mouse */
     text-decoration: underline; /* Aggiunge il sottolineato al testo */
@@ -109,10 +108,9 @@ padding: 25px 10px;
 
 .filterTable{
 	border-radius: 10px;
-	margin-top: 20px;
     background: #eef0f2;
     border-top: 3px solid #eef0f3;
-    margin: 0px 85px;
+    margin: 20px 85px 0px 85px;
     transition: all 340ms ease 0s;
     border: 1px solid;
     box-shadow: 2px 8px 8px #1d1d1d;
