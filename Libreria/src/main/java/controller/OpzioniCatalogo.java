@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.util.Base64;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +35,10 @@ public class OpzioniCatalogo extends HttpServlet{
 		final String pass_db = "admin";
 		Connection connessione;
 		String path = "/admin_dashboard/admin_prodotti.jsp";
+		ServletContext context = getServletContext();
+		String imagePath = context.getRealPath("/img/Products/");
+		System.out.println("\n" + imagePath);
+
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -77,7 +82,7 @@ public class OpzioniCatalogo extends HttpServlet{
 				byte[] imgData = Base64.getDecoder().decode(imageByteArray);
 
 				String fileName = request.getParameter("titolo") + ".png";
-				String filePath = "C:\\Users\\sasyd\\OneDrive\\DeskLaptop\\TSW\\A.PC\\Z. Progetto\\Libreria\\Libreria\\WebContent\\img\\Products" + fileName;
+				String filePath = imagePath + File.separator + fileName;
 				String filePathDB = "img/Products/" + fileName;
 				
 				try (FileOutputStream fos = new FileOutputStream(filePath)) {
