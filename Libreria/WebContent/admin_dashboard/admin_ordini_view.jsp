@@ -20,6 +20,13 @@
        
 </head>
 <body class="bgSand">
+
+	<%if(session.getAttribute("admin") == null) {%>
+		<script>
+        	window.location.href = 'index.jsp';
+    	</script>
+	<%} %>
+
     <div class="bg-white">
         <div class="logo-container">
             <a href="index_admin.jsp">

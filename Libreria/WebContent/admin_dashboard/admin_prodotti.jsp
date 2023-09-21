@@ -24,6 +24,13 @@
     <title>root@AS-New Readings</title>
 </head>
 <body class="bgSand">
+
+	<%if(session.getAttribute("admin") == null) {%>
+		<script>
+        	window.location.href = 'catalogo.jsp';
+    	</script>
+	<%} %>
+
     <div class="bg-white">
         <div class="logo-container">
             <a href="index_admin.jsp">

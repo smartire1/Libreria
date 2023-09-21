@@ -16,6 +16,11 @@
     	function voidCartMessage() {
     		document.getElementById("table-bg").style.height = "40%"; 	
     		}
+    	
+    	function formSend(isbn) {
+    		document.getElementById("isbn").value = isbn;
+    		document.getElementById("prodotto").submit();
+    	}
     </script>
 	
 
@@ -105,23 +110,25 @@
 		        <% if (res.next()) { %>
 		            <% do {%>	
 		            <div class="col-xxl-3 col-xl-4 col-lg-6 d-flex justify-content-center" style="margin-top: 60px; ">
-		                <div class="card pricingTable" >
-		                    <h3 class="title" ><%= res.getString("titolo") %> </h3>
-		                    <span><img src="<%= res.getString("img") %>" alt="img" class="card-img-top"></span>
-		                    <br>
-		                    <div class="card-body">
-		                        <hr/><p><strong>ISBN: </strong><%= res.getString("isbn") %>  <input id="isbn" name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></p>
-		                        <p><strong>casa editrice:  </strong><%= res.getString("casaEditrice") %></p>
-		                        <p><strong>prezzo: </strong> <%= res.getString("prezzo") %> &#8364</p><hr/>
-		
-		                        <% if( session.getAttribute("email") != null && !session.getAttribute("email").equals("") ) { %>
-		                            <button type="button" class="btn btn-danger" onclick="addToCart('<%= res.getString("isbn") %>', '<%= session.getAttribute("email") %>')">Aggiungi al carrello</button>
-		                        <% } else { %>
-		                            <button type="button" class="btn btn-danger" onclick="alert('E\' necessario loggarsi!');">Aggiungi al carrello</button>
-		                        <% } %>
-		
-		                    </div>
-		                </div>		      
+		            	<form id="prodotto" action="product.jsp" method="get">
+			                <div class="card pricingTable" >
+			                    <h3 class="title" ><%= res.getString("titolo") %> </h3>
+			                    <span><img src="<%= res.getString("img") %>" alt="img" class="card-img-top" onclick="formSend(<%= res.getString("isbn") %>)"></span>
+			                    <br>
+			                    <div class="card-body">
+			                        <hr/><p><strong>ISBN: </strong><%= res.getString("isbn") %>  <input id="isbn" name="isbn" type="hidden" value="<%= res.getString("isbn") %>"/></p>
+			                        <p><strong>casa editrice:  </strong><%= res.getString("casaEditrice") %></p>
+			                        <p><strong>prezzo: </strong> <%= res.getString("prezzo") %> &#8364</p><hr/>
+			
+			                        <% if( session.getAttribute("email") != null && !session.getAttribute("email").equals("") ) { %>
+			                            <button type="button" class="btn btn-danger" onclick="addToCart('<%= res.getString("isbn") %>', '<%= session.getAttribute("email") %>')">Aggiungi al carrello</button>
+			                        <% } else { %>
+			                            <button type="button" class="btn btn-danger" onclick="alert('E\' necessario loggarsi!');">Aggiungi al carrello</button>
+			                        <% } %>
+			
+			                    </div>
+			                </div>	
+			            </form>	      
 		            </div>
 		            <%} while(res.next()); %>
 		        <% } else { %>
