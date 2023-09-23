@@ -34,6 +34,28 @@
 			height: 500px;
 			width: 300px;
 		}
+		.product li{
+		    font-size: 21px;
+		    font-style: italic;
+		    color: #4d4a4a;
+		    line-height: 26px;
+		    text-align: left;
+		}	
+		.product button{
+		    display: block;
+		    padding: 15px 30px;
+		    border-radius: 52px;
+		    border: 2px solid transparent;
+		    font-size: 14px;
+		    font-weight: 700;
+		    letter-spacing: 0.32px;
+		    text-transform: uppercase;
+		    text-align: center;
+		    transition: all 300ms linear 0ms;
+		    color: #ca293e;
+		    background-color: #eef0f2;
+		    border-color: #ca293e;
+		}		
 	</style>
 </head>
 <body class="bgSand" id="catalogo">
@@ -72,9 +94,50 @@
 				</div>
 	    		<div class="col col-md-6">
 					<h1><%= p.getTitolo()%></h1>
-					<p></p>
+					<ul>
+						<li><%= p.getIsbn()%></li>
+						<li><%= p.getCasaEditrice()%></li>
+						<li><%= p.getPrezzo()%> &#8364</li>
+					</ul>
+					<br>
+					<br>
+					<br>
+					<button>Aggiungi al carrello</button>
 				</div>				
 	    	</div>
 	    </div>
+	    
+    <br>
+    <footer>
+        <div class="footer-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <p>Seguici sui social per rimanere sempre aggiornato!</p>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="https://twitter.com/login?lang=it">
+                                    <i class="fab fa-twitter fa-2x"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/">
+                                    <i class="fab fa-facebook fa-2x"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/?hl=it">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>
